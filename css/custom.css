@@ -1,22 +1,116 @@
+/*
+
+       /$$           /$$                                  /$$$$$$                                       
+      | $$          | $$                                 /$$__  $$                                      
+  /$$$$$$$  /$$$$$$$| $$$$$$$   /$$$$$$  /$$$$$$$       | $$  \__//$$$$$$   /$$$$$$                     
+ /$$__  $$ /$$_____/| $$__  $$ /$$__  $$| $$__  $$      | $$$$   /$$__  $$ /$$__  $$                    
+| $$  | $$| $$      | $$  \ $$| $$$$$$$$| $$  \ $$      | $$_/  | $$  \ $$| $$  \__/                    
+| $$  | $$| $$      | $$  | $$| $$_____/| $$  | $$      | $$    | $$  | $$| $$                          
+|  $$$$$$$|  $$$$$$$| $$  | $$|  $$$$$$$| $$  | $$      | $$    |  $$$$$$/| $$                          
+ \_______/ \_______/|__/  |__/ \_______/|__/  |__/      |__/     \______/ |__/                          
+                                                                                                        
+                                                                                                        
+                                                                                                        
+ /$$   /$$                     /$$       /$$$$$$$  /$$   /$$        /$$$$$$   /$$$$$$    /$$   /$$$$$$$$
+| $$  | $$                    | $$      | $$__  $$| $$  | $$       /$$__  $$ /$$$_  $$ /$$$$  |_____ $$/
+| $$  | $$  /$$$$$$   /$$$$$$$| $$   /$$| $$  \ $$| $$  | $$      |__/  \ $$| $$$$\ $$|_  $$       /$$/ 
+| $$$$$$$$ |____  $$ /$$_____/| $$  /$$/| $$$$$$$/| $$  | $$        /$$$$$$/| $$ $$ $$  | $$      /$$/  
+| $$__  $$  /$$$$$$$| $$      | $$$$$$/ | $$__  $$| $$  | $$       /$$____/ | $$\ $$$$  | $$     /$$/   
+| $$  | $$ /$$__  $$| $$      | $$_  $$ | $$  \ $$| $$  | $$      | $$      | $$ \ $$$  | $$    /$$/    
+| $$  | $$|  $$$$$$$|  $$$$$$$| $$ \  $$| $$  | $$|  $$$$$$/      | $$$$$$$$|  $$$$$$/ /$$$$$$ /$$/     
+|__/  |__/ \_______/ \_______/|__/  \__/|__/  |__/ \______/       |________/ \______/ |______/|__/      
+  
+*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+@font-face {
+  font-family: Circular;
+  font-weight: bold;
+  src: local("Circular"), url("../assets/CircularStd-Bold.otf") format("opentype"); }
+@font-face {
+  font-family: Circular;
+  font-weight: normal;
+  src: local("Circular"), url("../assets/CircularStd-Book.otf") format("opentype"); }
+html {
+  background-color: #ABFFCC; }
+
 body {
-  font: 100% Helvetica, sans-serif;
-  color: #333; }
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none; }
-nav li {
-  display: inline-block; }
-nav a {
-  display: block;
-  padding: 6px 12px;
-  text-decoration: none; }
-
-.box {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  border-radius: 10px; }
+  color: black; }
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+    font-weight: bold; }
+  body #hero {
+    background: url("../assets/rutgers field.jpg");
+    background-size: cover;
+    height: 100vh; }
+    body #hero #hero-banner {
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.95);
+      height: 100%;
+      font-family: 'Circular', sans-serif;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      overflow: hidden; }
+      body #hero #hero-banner #hero-logo {
+        width: 100%; }
+      body #hero #hero-banner #hero-info {
+        padding: 0px 10px; }
+        body #hero #hero-banner #hero-info #date-text {
+          color: #4BCF7E; }
+        body #hero #hero-banner #hero-info #email-sub-input {
+          color: #4BCF7E; }
+        body #hero #hero-banner #hero-info #email-sub-input:focus {
+          color: black;
+          border-color: #4BCF7E;
+          box-shadow: none; }
+        body #hero #hero-banner #hero-info #email-sub-submit {
+          width: 100%;
+          background-color: #4BCF7E;
+          color: white; }
+          body #hero #hero-banner #hero-info #email-sub-submit h4 {
+            margin: 5px 0px; }
+      body #hero #hero-banner #hero-webosphere {
+        position: absolute;
+        bottom: 0;
+        padding: 15px 10px; }
+        body #hero #hero-banner #hero-webosphere a {
+          float: left;
+          padding-right: 25px;
+          display: inline-block;
+          color: #4BCF7E;
+          text-decoration: none; }
+        body #hero #hero-banner #hero-webosphere a:hover {
+          color: black; }
+    body #hero #hero-nav {
+      text-align: right;
+      background-color: #ABFFCC;
+      padding-right: 0px; }
+      body #hero #hero-nav ul {
+        margin: 0;
+        height: 50px; }
+      body #hero #hero-nav li {
+        float: right;
+        height: 100%;
+        display: inline-block; }
+      body #hero #hero-nav li a {
+        display: block;
+        line-height: 50px;
+        padding: 0px 25px;
+        text-transform: lowercase;
+        text-decoration: none;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        transition: all 0.3s ease-in-out; }
+      body #hero #hero-nav li a:hover {
+        color: white;
+        background-color: #4BCF7E; }
+  body #about {
+    background-color: #4BCF7E;
+    height: 100vh; }
+  body #schedule {
+    background-color: #ABFFCC;
+    height: 100vh; }
+  body #sponsors {
+    background-color: #84E5AA;
+    height: 100vh; }
 
 /*# sourceMappingURL=custom.css.map */

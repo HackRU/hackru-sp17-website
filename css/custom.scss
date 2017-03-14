@@ -1,33 +1,177 @@
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
+/*
+
+       /$$           /$$                                  /$$$$$$                                       
+      | $$          | $$                                 /$$__  $$                                      
+  /$$$$$$$  /$$$$$$$| $$$$$$$   /$$$$$$  /$$$$$$$       | $$  \__//$$$$$$   /$$$$$$                     
+ /$$__  $$ /$$_____/| $$__  $$ /$$__  $$| $$__  $$      | $$$$   /$$__  $$ /$$__  $$                    
+| $$  | $$| $$      | $$  \ $$| $$$$$$$$| $$  \ $$      | $$_/  | $$  \ $$| $$  \__/                    
+| $$  | $$| $$      | $$  | $$| $$_____/| $$  | $$      | $$    | $$  | $$| $$                          
+|  $$$$$$$|  $$$$$$$| $$  | $$|  $$$$$$$| $$  | $$      | $$    |  $$$$$$/| $$                          
+ \_______/ \_______/|__/  |__/ \_______/|__/  |__/      |__/     \______/ |__/                          
+                                                                                                        
+                                                                                                        
+                                                                                                        
+ /$$   /$$                     /$$       /$$$$$$$  /$$   /$$        /$$$$$$   /$$$$$$    /$$   /$$$$$$$$
+| $$  | $$                    | $$      | $$__  $$| $$  | $$       /$$__  $$ /$$$_  $$ /$$$$  |_____ $$/
+| $$  | $$  /$$$$$$   /$$$$$$$| $$   /$$| $$  \ $$| $$  | $$      |__/  \ $$| $$$$\ $$|_  $$       /$$/ 
+| $$$$$$$$ |____  $$ /$$_____/| $$  /$$/| $$$$$$$/| $$  | $$        /$$$$$$/| $$ $$ $$  | $$      /$$/  
+| $$__  $$  /$$$$$$$| $$      | $$$$$$/ | $$__  $$| $$  | $$       /$$____/ | $$\ $$$$  | $$     /$$/   
+| $$  | $$ /$$__  $$| $$      | $$_  $$ | $$  \ $$| $$  | $$      | $$      | $$ \ $$$  | $$    /$$/    
+| $$  | $$|  $$$$$$$|  $$$$$$$| $$ \  $$| $$  | $$|  $$$$$$/      | $$$$$$$$|  $$$$$$/ /$$$$$$ /$$/     
+|__/  |__/ \_______/ \_______/|__/  \__/|__/  |__/ \______/       |________/ \______/ |______/|__/      
+  
+*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@font-face {
+	font-family: Circular;
+	font-weight: bold;
+	src: local('Circular'), url('../assets/CircularStd-Bold.otf') format("opentype");
+}
+@font-face {
+	font-family: Circular;
+	font-weight: normal;
+	src: local('Circular'), url('../assets/CircularStd-Book.otf') format("opentype");
+}
+
+$light-green: #ABFFCC;
+$mid-green: #84E5AA;
+$dark-green: #4BCF7E;
+$browser-height: 100vh;
+$browser-width: 100%;
+
+html {
+	background-color: $light-green;
+}
 
 body {
-  font: 100% $font-stack;
-  color: $primary-color;
+	color: black;
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: bold;
+	}
+
+	#hero {
+		background: url('../assets/rutgers field.jpg');
+		background-size: cover;
+		height: $browser-height;
+
+
+		#hero-banner {
+			position: relative;
+			background-color: rgba(255, 255, 255, 0.95);
+			height: 100%;
+			font-family: 'Circular', sans-serif;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			overflow: hidden;
+
+
+
+			#hero-logo {
+				width: 100%;
+			}
+
+			#hero-info {
+				padding: 0px 10px;
+
+				#date-text {
+					color: $dark-green;
+				}
+
+				#email-sub-input {
+					color: $dark-green;
+				}
+
+				#email-sub-input:focus {
+					color: black;
+					border-color: $dark-green;
+					box-shadow: none;
+				}
+
+				#email-sub-submit {
+					width: 100%;
+					background-color: $dark-green;
+					color: white;
+
+					h4 {
+						margin: 5px 0px;
+					}
+				}
+			}
+
+			#hero-webosphere {
+				position: absolute;
+				bottom: 0;
+				padding: 15px 10px;
+				
+				a {
+					float: left;
+					padding-right: 25px;
+					display: inline-block;
+					color: $dark-green;
+					text-decoration: none;
+				}
+
+				a:hover {
+					color: black;
+				}
+				.social-links {
+					
+				}
+			}
+
+		}
+
+		#hero-nav {
+			text-align: right;
+			background-color: $light-green;
+			padding-right: 0px;
+
+			ul {
+				margin: 0;
+				height: 50px;
+			}
+			
+			li {
+				float: right;
+				height: 100%;
+				display: inline-block;
+			}
+
+			li a {
+				display: block;
+				line-height: 50px;
+				padding: 0px 25px;
+				text-transform: lowercase;
+				text-decoration: none;
+				color: white;
+				font-family: 'Montserrat', sans-serif;
+				transition: all 0.3s ease-in-out;
+			}
+
+			li a:hover {
+				color: white;
+				background-color: $dark-green;
+			}
+		}
+	}
+
+	#about {
+		background-color: $dark-green;
+		height: $browser-height;
+	}
+
+	#schedule {
+		background-color: $light-green;
+		height: $browser-height;
+	}
+
+	#sponsors {
+		background-color: $mid-green;
+		height: $browser-height;
+	}
+
 }
-
-
-nav {
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  li { display: inline-block; }
-
-  a {
-    display: block;
-    padding: 6px 12px;
-    text-decoration: none;
-  }
-}
-
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
-}
-
-.box { @include border-radius(10px); }
