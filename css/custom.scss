@@ -40,6 +40,7 @@ $light-green: #ABFFCC;
 $mid-green: #84E5AA;
 $dark-green: #4BCF7E;
 $browser-height: 100vh;
+$browser-height-half: 50vh;
 $browser-width: 100%;
 
 html {
@@ -48,13 +49,18 @@ html {
 
 body {
 	color: black;
+	font-family: 'Circular', sans-serif;
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: bold;
 	}
 
+	.row {
+		overflow: hidden;
+	}
+
 	#hero {
-		background: url('../assets/rutgers field.jpg');
+		background: url('../assets/hero-green.jpg');
 		background-size: cover;
 		height: $browser-height;
 
@@ -63,10 +69,9 @@ body {
 			position: relative;
 			background-color: rgba(255, 255, 255, 0.95);
 			height: 100%;
-			font-family: 'Circular', sans-serif;
 			padding-top: 15px;
 			padding-bottom: 15px;
-			overflow: hidden;
+			
 
 
 
@@ -118,25 +123,25 @@ body {
 				a:hover {
 					color: black;
 				}
-				.social-links {
-					
-				}
 			}
 
 		}
 
 		#hero-nav {
 			text-align: right;
-			background-color: $light-green;
 			padding-right: 0px;
+			h4 {
+				margin: 0px;
+			}
 
 			ul {
 				margin: 0;
 				height: 50px;
+				// float: right;
 			}
 			
 			li {
-				float: right;
+				// float: left;
 				height: 100%;
 				display: inline-block;
 			}
@@ -148,30 +153,148 @@ body {
 				text-transform: lowercase;
 				text-decoration: none;
 				color: white;
-				font-family: 'Montserrat', sans-serif;
-				transition: all 0.3s ease-in-out;
+				transition: all 0.25s ease-in-out;
+				border-bottom: 0px $dark-green solid;
 			}
 
 			li a:hover {
-				color: white;
-				background-color: $dark-green;
+				border-bottom: 5px $dark-green solid;
+				// background-color: $dark-green;
+			}
+		}
+	}
+	
+	.section-title {
+		padding-top: 50px;
+		margin: 0px;
+	}
+
+	.section-subtitle {
+		padding: 10px 0px;
+		margin: 0px;
+	}
+
+	.short-separator {
+		height: 1px;
+		width: 75px;
+		border-bottom: 1px $dark-green solid;
+	}
+
+	#about {
+		background-color: white;
+		height: $browser-height;
+
+		p a {
+			color: $dark-green;
+		}
+
+		.section-title {
+			color: $dark-green;
+		}
+
+		#about-brain {
+			max-height: 250px; 
+			float: right;
+		}
+
+		#about-location {
+			padding-top: 50px;
+		
+			#about-location-map {
+				padding-top: 10px;
+				width: 100%;
+				height: 200px;
+			}
+
+			#about-location-text {
+				text-align: right;
+
+				.short-separator {
+					float: right;
+				}
 			}
 		}
 	}
 
-	#about {
-		background-color: $dark-green;
-		height: $browser-height;
-	}
-
 	#schedule {
-		background-color: $light-green;
-		height: $browser-height;
+		background-color: $dark-green;
+		height: 70vh;
+		color: white;
+
+		.section-subtitle {
+			padding: 25px 0px 10px 0px;
+			text-align: center;
+		}
+
+		.sched-text {
+			display: table;
+			margin: auto;
+			padding: 10px 25px 25px 25px;
+			border-top: 1px white dotted;
+
+			p {
+				float: left;
+				padding-top: 10px;
+				font-weight: bold;
+			}
+		}
+
+		.schedule-left-text {
+			text-align: right;
+			padding-right: 15px;
+			color: black;
+		}
+		.schedule-right-text {
+			text-align: left;
+			padding-left: 15px;
+			color: white;
+		}
+
+		#full-sched-button {
+			text-transform: uppercase;
+			color: white;
+			background-color: black;
+			border: none;
+			margin-top: 50px;
+			width: 100%;
+		}
 	}
 
 	#sponsors {
-		background-color: $mid-green;
+		background-color: white;
 		height: $browser-height;
+
+		.section-title {
+			color: $dark-green;
+		}
 	}
+
+	#faqs {
+		background-color: $dark-green;
+		color: white;
+		padding-bottom: 50px;
+
+		.section-subtitle {
+			color: white;
+			padding-top: 40px;
+		}
+
+		p {
+			color: black;
+			padding-top: 10px;
+			font-weight: normal;
+		}
+
+		.short-separator {
+			border-color: black;
+		}
+	}
+	
+	#footer {
+		background-color: white;
+		height: $browser-height;
+		color: $dark-green;
+	}
+
 
 }
