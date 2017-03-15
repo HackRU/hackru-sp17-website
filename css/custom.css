@@ -39,22 +39,61 @@ body {
   font-family: 'Circular', sans-serif; }
   body h1, body h2, body h3, body h4, body h5, body h6 {
     font-weight: bold; }
+  body h5 {
+    font-size: 18px; }
+  body h6 {
+    font-size: 16px; }
   body .row {
     overflow: hidden; }
+  body .subtitle-icon {
+    padding-right: 5px; }
   body #hero {
     background: url("../assets/hero-green.jpg");
     background-size: cover;
     height: 100vh; }
+    body #hero #nav-secondary {
+      display: none;
+      background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 2%, rgba(255, 255, 255, 0.75) 49%, rgba(255, 255, 255, 0.75) 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 2%, rgba(255, 255, 255, 0.75) 49%, rgba(255, 255, 255, 0.75) 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 2%, rgba(255, 255, 255, 0.75) 49%, rgba(255, 255, 255, 0.75) 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#bfffffff',GradientType=1 );
+      /* IE6-9 */
+      height: 50px;
+      position: fixed;
+      left: 0;
+      z-index: 10;
+      padding: 0px; }
+      body #hero #nav-secondary h4 {
+        margin: 0px; }
+      body #hero #nav-secondary ul {
+        margin: 0;
+        float: right; }
+      body #hero #nav-secondary li {
+        float: left;
+        height: 100%;
+        display: inline-block; }
+      body #hero #nav-secondary li a {
+        display: block;
+        line-height: 50px;
+        padding: 0px 25px;
+        text-transform: lowercase;
+        text-decoration: none;
+        color: #4BCF7E;
+        transition: all 0.25s ease-in-out; }
+      body #hero #nav-secondary li a:hover {
+        margin: 5px 5px; }
     body #hero #hero-banner {
       position: relative;
       background-color: rgba(255, 255, 255, 0.95);
       height: 100%;
-      padding-top: 15px;
-      padding-bottom: 15px; }
+      padding: 15px 20px; }
       body #hero #hero-banner #hero-logo {
         width: 100%; }
       body #hero #hero-banner #hero-info {
-        padding: 0px 10px; }
+        padding: 0px; }
         body #hero #hero-banner #hero-info #date-text {
           color: #4BCF7E; }
         body #hero #hero-banner #hero-info #email-sub-input {
@@ -72,7 +111,7 @@ body {
       body #hero #hero-banner #hero-webosphere {
         position: absolute;
         bottom: 0;
-        padding: 15px 10px; }
+        padding: 15px 0px; }
         body #hero #hero-banner #hero-webosphere a {
           float: left;
           padding-right: 25px;
@@ -83,13 +122,22 @@ body {
           color: black; }
     body #hero #hero-nav {
       text-align: right;
-      padding-right: 0px; }
+      padding-right: 15px; }
+      body #hero #hero-nav #mlh-banner {
+        float: right;
+        max-width: 100px;
+        min-width: 60px;
+        width: 10%; }
+        body #hero #hero-nav #mlh-banner img {
+          width: 100%; }
       body #hero #hero-nav h4 {
         margin: 0px; }
       body #hero #hero-nav ul {
         margin: 0;
-        height: 50px; }
+        height: 50px;
+        float: right; }
       body #hero #hero-nav li {
+        float: left;
         height: 100%;
         display: inline-block; }
       body #hero #hero-nav li a {
@@ -102,9 +150,9 @@ body {
         transition: all 0.25s ease-in-out;
         border-bottom: 0px #4BCF7E solid; }
       body #hero #hero-nav li a:hover {
-        border-bottom: 5px #4BCF7E solid; }
+        margin: 5px 5px;
+        color: #84E5AA; }
   body .section-title {
-    padding-top: 50px;
     margin: 0px; }
   body .section-subtitle {
     padding: 10px 0px;
@@ -115,10 +163,11 @@ body {
     border-bottom: 1px #4BCF7E solid; }
   body #about {
     background-color: white;
-    height: 100vh; }
-    body #about p a {
-      color: #4BCF7E; }
-    body #about .section-title {
+    padding: 50px 0px;
+    color: #4BCF7E; }
+    body #about p, body #about .section-subtitle {
+      color: black; }
+    body #about a, body #about .subtitle-icon {
       color: #4BCF7E; }
     body #about #about-brain {
       max-height: 250px;
@@ -126,37 +175,45 @@ body {
     body #about #about-location {
       padding-top: 50px; }
       body #about #about-location #about-location-map {
-        padding-top: 10px;
         width: 100%;
-        height: 200px; }
+        height: 200px;
+        border: 1px #4BCF7E solid;
+        overflow: hidden; }
+        body #about #about-location #about-location-map iframe {
+          pointer-events: none; }
       body #about #about-location #about-location-text {
         text-align: right; }
         body #about #about-location #about-location-text .short-separator {
           float: right; }
   body #schedule {
     background-color: #4BCF7E;
-    height: 70vh;
-    color: white; }
+    color: white;
+    padding: 50px 0px; }
     body #schedule .section-subtitle {
       padding: 25px 0px 10px 0px;
       text-align: center; }
+    body #schedule .sched-event {
+      width: 100%;
+      float: left; }
+      body #schedule .sched-event p {
+        margin: 0px; }
+      body #schedule .sched-event .sched-time {
+        width: 40%;
+        display: block;
+        color: black;
+        text-align: right;
+        padding-right: 10px; }
+      body #schedule .sched-event .sched-desc {
+        width: 60%;
+        display: block;
+        text-align: left;
+        padding-left: 10px; }
     body #schedule .sched-text {
-      display: table;
-      margin: auto;
-      padding: 10px 25px 25px 25px;
-      border-top: 1px white dotted; }
+      width: 100%;
+      padding: 10px 0px 0px 0px; }
       body #schedule .sched-text p {
         float: left;
-        padding-top: 10px;
         font-weight: bold; }
-    body #schedule .schedule-left-text {
-      text-align: right;
-      padding-right: 15px;
-      color: black; }
-    body #schedule .schedule-right-text {
-      text-align: left;
-      padding-left: 15px;
-      color: white; }
     body #schedule #full-sched-button {
       text-transform: uppercase;
       color: white;
@@ -166,13 +223,14 @@ body {
       width: 100%; }
   body #sponsors {
     background-color: white;
-    height: 100vh; }
+    height: 100vh;
+    padding: 50px 0px; }
     body #sponsors .section-title {
       color: #4BCF7E; }
   body #faqs {
     background-color: #4BCF7E;
     color: white;
-    padding-bottom: 50px; }
+    padding: 50px 0px; }
     body #faqs .section-subtitle {
       color: white;
       padding-top: 40px; }
@@ -183,8 +241,11 @@ body {
     body #faqs .short-separator {
       border-color: black; }
   body #footer {
-    background-color: white;
-    height: 100vh;
-    color: #4BCF7E; }
+    background-color: black;
+    height: 18vh;
+    color: white; }
+    body #footer .section-title {
+      padding: 0px;
+      line-height: 18vh; }
 
 /*# sourceMappingURL=custom.css.map */
