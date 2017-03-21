@@ -4,18 +4,21 @@ $( document ).ready(function() {
 
 	var heroBottom = $('#hero').height();
 	$(window).on('scroll',function(){
-
 	    // we round here to reduce a little workload
 	    var stop = Math.round($(window).scrollTop());
 
 	    if (stop > heroBottom) {
-	        $('#nav-secondary').fadeIn();
+	    	$('#nav-secondary').fadeIn();
 	    } else {
-	        $('#nav-secondary').fadeOut();
+	    	$('#nav-secondary').fadeOut();
 	    }
+	});
 
-	});	
+	// on resume file upload, change the notification to say what file was uploaded
 
+	$('#resume-upload-input').on("change", function(){
+		changeFileUploadPreview();
+	});
 });
 
 
@@ -35,4 +38,12 @@ function toggleMapScrollOnClickAndLeave() {
 	$( "#about-location-map" ).mouseleave(function() {
 		$('#about-location-map iframe').css("pointer-events", "none"); 
 	});
+}
+
+function changeFileUploadPreview(){
+
+    var fileName = $("#resume-upload-input").val().replace(/\\/g, '/').replace(/.*\//, '');
+    $("#file-selector-notif").text(fileName);
+    console.log(fileName);
+
 }
