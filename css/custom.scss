@@ -48,6 +48,7 @@ html {
 }
 
 body {
+	overflow-y: scroll;
 	color: black;
 	font-family: 'Circular', sans-serif;
 
@@ -415,6 +416,7 @@ body {
 .subpage-section {
 	background-color: white;
 	min-height: 100vh;
+	padding-bottom: 7vh;
 	
 	.subpage-nav {
 		text-align: right;
@@ -472,11 +474,31 @@ body {
 
 	.subpage-content {
 
+		> div {
+			display: inline-block;
+    		float: none;
+		}
+
 		color: $dark-green;
+
+		.content-button {
+			color: white;
+			width: 75%;
+			height: 7vh;
+			line-height: 7vh;
+			font-family: 'Circular', sans-serif;
+			text-transform: uppercase;
+			font-size: 2.5vmin;
+			background-color: $dark-green;
+			border: none;
+			padding-top: 0;
+			padding-bottom: 0;
+			margin: 2vh 0;
+		}
 
 		form {
 
-			margin: 6vh 0;
+			margin-top: 6vh;
 
 			#file-selector-notif {
 
@@ -524,8 +546,7 @@ body {
 
 			#registration-terms {
 				margin: 0;
-				margin-top: 5vh;
-				margin-bottom: 4vh;
+				margin: 5vh 0;
 
 				a {
 					color: inherit;
@@ -537,9 +558,7 @@ body {
 
 			#registration-checkbox {
 
-				margin: 0;
-				margin-top: 4vh;
-				margin-bottom: 5vh;
+				margin: 5vh 0;
 
 				p {
 					text-align: left;
@@ -554,25 +573,58 @@ body {
 				}
 			}
 
-			#registration-submit {
-				color: white;
-				width: 75%;
-				height: 7vh;
-				line-height: 7vh;
-				font-family: 'Circular', sans-serif;
-				text-transform: uppercase;
-				font-size: 2.5vmin;
-				background-color: $dark-green;
-				border: none;
-				padding-top: 0;
-				padding-bottom: 0;
-
-			}
-
 			#file-selector-notif {
 				white-space: nowrap;
 			}
 
 		}
+	}
+}
+
+
+#manage-confirmation {
+
+	#attendance-select {
+		width: 100%;
+		height: 30vh;
+		margin: 7vh 0;
+		background-color: #eaeaea;
+		outline: 10px #eaeaea solid;
+
+		label {
+			margin: 0;
+			padding: 0;
+			background-color: #eaeaea;
+			width: 50%;
+			height: 100%;
+			border: none;
+			outline: none;
+			box-shadow: none;
+			transition: all 0.5s ease-in-out;
+
+			h1,h2,h3,h4,h5 {
+				margin: 0;
+				line-height: 30vh;
+			}
+		}
+		
+
+		#attending-label.active {
+			background-color: $dark-green;
+		}
+		
+		#not-attending-label.active{
+			background-color: #ea4c48;
+		}
+
+
+		// #attending-label:hover {
+		// 	border: $dark-green solid 1px;
+		// }
+
+		// #not-attending-label:hover {
+		// 	border: #ea4c48 solid 1px;
+		// }
+		
 	}
 }

@@ -28,7 +28,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Sign up for HackRU Spring 2017, taking place from April 22nd to 23rd.">
-	<title>HackRU - Registered</title>
+	<title>HackRU - Account</title>
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/custom.css">
 	
@@ -44,7 +44,7 @@
 
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-		<div class="row subpage-section" id="registration-finish">
+		<div class="row subpage-section" id="manage-account">
 			
 			<div class="row">
 				<div class="col-sm-12 subpage-nav">
@@ -59,18 +59,40 @@
 
 			<div class="row subpage-hero">
 				<div class="col-sm-12 subpage-hero-title">
-					<h1>You're all good!</h1>
+					<h1>Manage Account</h1>
 				</div>
 
 			</div>
 
 			<div class="row subpage-content text-center">
 				<div class="col-sm-5">
-					<h1><i class="fa fa-smile-o fa-2x" aria-hidden="true"></i></h1>
-					<h3>Thanks for signing up for HackRU!</h3>
-					<p>In the meantime, visit your dashboard if you need to change any information or view your confirmation status.</p>
 
-					<a href="dashboard.html" class="btn btn-default content-button">Dashboard</a>
+					<form class="form-horizontal" role="form">
+
+						<div class="form-group">
+							<label for="github-handle-input" class="col-sm-12 col-md-6 control-label"><h6>Github Username</h6></label>
+							<div class="col-sm-12 col-md-6">
+								<input type="text" class="form-control" id="github-handle-input" placeholder="githubhandle" pattern="\S+">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="resume-upload-input" class="col-sm-12 col-md-6 control-label"><h6>Resumé</h6></label>
+							<div class="col-sm-12 col-md-4">
+								<label class="btn btn-default btn-file">
+									<p>Upload</p><input type="file" id="resume-upload-input" class="hidden">
+								</label>
+							</div>
+							<div class="col-sm-12 col-md-2"><p id="file-selector-notif"></p></div>
+						</div>
+
+						<p class="bg-danger">DEV: DONT REMOVE THIS UNTIL BUTTON ACTIONS/FORM ACTIONS ARE FINALIZED</p>
+						<input class="btn btn-default content-button" type="submit" value="Save">
+						<a href="dashboard.html" class="btn btn-default content-button">Dashboard</a>
+					</form>
+
+					
+
 				</div>
 			</div>
 
