@@ -66,22 +66,27 @@
 
 			<div class="row subpage-content text-center">
 				<div class="col-sm-4 col-sm-offset-4">
-					
+
 					<h4>Awesome <%= user.mlh_data.first_name %>, you're signed in with myMLH! Now we just need a little bit more information about you.</h4>
 
+					<!-- remove this block after dev -->
+					<p class="bg-danger text-muted text-left">DEV TODO:<br>-MAKE THE FORM'S ACTION LINK WITH BACKEND CODE<br>-PREVENT LARGE FILE UPLOADS FOR RESUME INPUTS (MAYBE CONSTRAIN TO PDFs/DOCs ONLY?)</p>
+					<!-- remove this block after dev -->
+
 					<form class="form-horizontal" role="form">
+
 						<div class="form-group">
-							<label for="github-handle-input" class="col-sm-12 col-md-6 control-label"><h6>Github Username*</h6></label>
+							<label for="github-handle-input" class="col-sm-12 col-md-6 control-label"><h6>Github Username</h6></label>
 							<div class="col-sm-12 col-md-6">
-								<input type="text" class="form-control" id="github-handle-input" placeholder="githubhandle" pattern="\S+" required>
+								<input type="text" class="form-control" id="github-handle-input" placeholder="githubhandle" pattern="\S+">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="resume-upload-input" class="col-sm-12 col-md-6 control-label"><h6>Resume*</h6></label>
+							<label for="resume-upload-input" class="col-sm-12 col-md-6 control-label"><h6>Resumé</h6></label>
 							<div class="col-sm-12 col-md-4">
 								<label class="btn btn-default btn-file">
-									<p>Upload</p><input type="file" id="resume-upload-input" class="hidden" required>
+									<p>Upload</p><input type="file" id="resume-upload-input" class="hidden">
 								</label>
 							</div>
 							<div class="col-sm-12 col-md-2"><p id="file-selector-notif"></p></div>
@@ -89,7 +94,12 @@
 
 
 						
-						<p id="registration-terms">*Required fields.<br><br>We participate in Major League Hacking (MLH) as an MLH Member Event. By accepting, you authorize us to share certain application/registration information for event administration, ranking, MLH admission, and occasional messages about hackathons in line with the <a href="/">MLH Privacy Policy.</a></p>
+						<p id="registration-terms">We participate in Major League Hacking (MLH) as an MLH Member Event. By accepting, you authorize us to share certain application/registration information for event administration, ranking, MLH admission, and occasional messages about hackathons in line with the <a href="/">MLH Privacy Policy.</a></p>
+						
+						<div id="registration-checkbox">
+							<p><input type="checkbox" required>I understand that by uploading my resumé and Github handle, it can potentially be shared with sponsors of HackRU and I may be contacted by recruiters.</p>
+						</div>			
+						
 
 						<input class="btn btn-default" id="registration-submit" type="submit" value="Submit">
 

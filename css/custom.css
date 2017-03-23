@@ -242,6 +242,14 @@ body {
       padding: 0px;
       line-height: 18vh; }
 
+.table-row {
+  display: table;
+  table-layout: fixed; }
+
+.table-row [class^="col-"] {
+  display: table-cell;
+  float: none; }
+
 .subpage-section {
   background-color: white;
   min-height: 100vh; }
@@ -314,12 +322,25 @@ body {
         .subpage-section .subpage-content form .form-group input:active, .subpage-section .subpage-content form .form-group input:focus {
           color: black; }
       .subpage-section .subpage-content form #registration-terms {
-        margin: 7vh 0; }
+        margin: 0;
+        margin-top: 5vh;
+        margin-bottom: 4vh; }
         .subpage-section .subpage-content form #registration-terms a {
           color: inherit;
           text-decoration: none;
           border-bottom: 1px solid;
           border-color: inherit; }
+      .subpage-section .subpage-content form #registration-checkbox {
+        margin: 0;
+        margin-top: 4vh;
+        margin-bottom: 5vh; }
+        .subpage-section .subpage-content form #registration-checkbox p {
+          text-align: left;
+          margin: 0 0 0 20px; }
+          .subpage-section .subpage-content form #registration-checkbox p input {
+            color: #4BCF7E;
+            margin-left: -20px;
+            margin-right: 7px; }
       .subpage-section .subpage-content form #registration-submit {
         color: white;
         width: 75%;
