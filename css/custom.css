@@ -362,20 +362,21 @@ body {
   width: 100%;
   height: 30vh;
   margin: 7vh 0;
-  background-color: #eaeaea;
-  outline: 10px #eaeaea solid; }
+  background-color: #d0d0d0;
+  outline: 10px #d0d0d0 solid; }
   #manage-confirmation #attendance-select label {
     margin: 0;
     padding: 0;
-    background-color: #eaeaea;
+    background-color: #d0d0d0;
     width: 50%;
     height: 100%;
     border: none;
     outline: none;
     box-shadow: none;
     transition: all 0.5s ease-in-out; }
-    #manage-confirmation #attendance-select label h1, #manage-confirmation #attendance-select label h2, #manage-confirmation #attendance-select label h3, #manage-confirmation #attendance-select label h4, #manage-confirmation #attendance-select label h5 {
+    #manage-confirmation #attendance-select label h1 {
       margin: 0;
+      font-size: 4.75vmin;
       line-height: 30vh; }
   #manage-confirmation #attendance-select #attending-label.active {
     background-color: #4BCF7E; }
