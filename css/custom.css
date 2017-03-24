@@ -255,35 +255,34 @@ body {
   background-color: white;
   min-height: 100vh;
   padding-bottom: 7vh; }
-  .subpage-section .subpage-nav {
-    text-align: right;
-    padding-right: 15px;
-    background-color: #4BCF7E; }
-    .subpage-section .subpage-nav h4 {
-      margin: 0px; }
-    .subpage-section .subpage-nav ul {
-      margin: 0;
-      height: 50px;
-      float: right; }
-    .subpage-section .subpage-nav li {
-      float: left;
-      height: 100%;
-      display: inline-block; }
-    .subpage-section .subpage-nav li a {
-      display: block;
-      line-height: 50px;
-      padding: 0px 25px;
-      text-transform: lowercase;
-      text-decoration: none;
-      color: white;
-      transition: all 0.25s ease-in-out; }
-    .subpage-section .subpage-nav li a:hover {
-      margin: 5px 5px; }
   .subpage-section .subpage-hero {
-    height: 25vh;
+    height: 35vh;
     background: url("../assets/hero-green.jpg");
     background-size: cover;
     margin-bottom: 7vh; }
+    .subpage-section .subpage-hero .subpage-nav {
+      text-align: right;
+      padding-right: 15px; }
+      .subpage-section .subpage-hero .subpage-nav h4 {
+        margin: 0px; }
+      .subpage-section .subpage-hero .subpage-nav ul {
+        margin: 0;
+        height: 50px;
+        float: right; }
+      .subpage-section .subpage-hero .subpage-nav li {
+        float: left;
+        height: 100%;
+        display: inline-block; }
+      .subpage-section .subpage-hero .subpage-nav li a {
+        display: block;
+        line-height: 50px;
+        padding: 0px 25px;
+        text-transform: lowercase;
+        text-decoration: none;
+        color: white;
+        transition: all 0.25s ease-in-out; }
+      .subpage-section .subpage-hero .subpage-nav li a:hover {
+        margin: 5px 5px; }
     .subpage-section .subpage-hero .subpage-hero-title {
       text-align: center; }
       .subpage-section .subpage-hero .subpage-hero-title h1 {
