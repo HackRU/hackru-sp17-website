@@ -1,16 +1,4 @@
-/*
-
-       /$$           /$$                                  /$$$$$$                                       
-      | $$          | $$                                 /$$__  $$                                      
-  /$$$$$$$  /$$$$$$$| $$$$$$$   /$$$$$$  /$$$$$$$       | $$  \__//$$$$$$   /$$$$$$                     
- /$$__  $$ /$$_____/| $$__  $$ /$$__  $$| $$__  $$      | $$$$   /$$__  $$ /$$__  $$                    
-| $$  | $$| $$      | $$  \ $$| $$$$$$$$| $$  \ $$      | $$_/  | $$  \ $$| $$  \__/                    
-| $$  | $$| $$      | $$  | $$| $$_____/| $$  | $$      | $$    | $$  | $$| $$                          
-|  $$$$$$$|  $$$$$$$| $$  | $$|  $$$$$$$| $$  | $$      | $$    |  $$$$$$/| $$                          
- \_______/ \_______/|__/  |__/ \_______/|__/  |__/      |__/     \______/ |__/                          
-                                                                                                        
-                                                                                                        
-                                                                                                        
+/*                                                                                                                      
  /$$   /$$                     /$$       /$$$$$$$  /$$   /$$        /$$$$$$   /$$$$$$    /$$   /$$$$$$$$
 | $$  | $$                    | $$      | $$__  $$| $$  | $$       /$$__  $$ /$$$_  $$ /$$$$  |_____ $$/
 | $$  | $$  /$$$$$$   /$$$$$$$| $$   /$$| $$  \ $$| $$  | $$      |__/  \ $$| $$$$\ $$|_  $$       /$$/ 
@@ -19,7 +7,7 @@
 | $$  | $$ /$$__  $$| $$      | $$_  $$ | $$  \ $$| $$  | $$      | $$      | $$ \ $$$  | $$    /$$/    
 | $$  | $$|  $$$$$$$|  $$$$$$$| $$ \  $$| $$  | $$|  $$$$$$/      | $$$$$$$$|  $$$$$$/ /$$$$$$ /$$/     
 |__/  |__/ \_______/ \_______/|__/  \__/|__/  |__/ \______/       |________/ \______/ |______/|__/      
-  
+
 */
 
 
@@ -143,6 +131,7 @@ body {
 			#hero-logo {
 				margin: 0 auto;
 				width: 80%;
+				max-width: 250px;
 			}
 
 			#hero-info {
@@ -162,15 +151,18 @@ body {
 					box-shadow: none;
 				}
 
-				#email-sub-submit {
+				.btn {
 					width: 100%;
 					background-color: $dark-green;
 					color: white;
+					outline: none;
 
 					h4 {
 						margin: 5px 0px;
 					}
 				}
+
+
 			}
 
 			#hero-webosphere {
@@ -449,18 +441,28 @@ body {
 				float: left;
 			}
 
+			/* text logo on subpages navbars*/
+			.text-logo {
+				color: white;
+				margin: 0;
+				padding: 0;
+				font-size: 18px;
+				line-height: 50px;
+			}
+
 			h4 {
 				margin: 0px;
 			}
 
 			ul {
+				padding: 0;
 				margin: 0;
 				height: 50px;
-				float: right;
+				// float: right;
 			}
 
 			li {
-				float: left;
+				// float: left;
 				height: 100%;
 				display: inline-block;
 			}
@@ -468,15 +470,10 @@ body {
 			li a {
 				display: block;
 				line-height: 50px;
-				padding: 0px 25px;
+				padding: 0px 20px;
 				text-transform: lowercase;
-				text-decoration: none;
 				color: white;
 				transition: all 0.25s ease-in-out;
-			}
-
-			li a:hover {
-				margin: 5px 5px;
 			}
 		}
 		

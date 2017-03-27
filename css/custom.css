@@ -1,16 +1,4 @@
-/*
-
-       /$$           /$$                                  /$$$$$$                                       
-      | $$          | $$                                 /$$__  $$                                      
-  /$$$$$$$  /$$$$$$$| $$$$$$$   /$$$$$$  /$$$$$$$       | $$  \__//$$$$$$   /$$$$$$                     
- /$$__  $$ /$$_____/| $$__  $$ /$$__  $$| $$__  $$      | $$$$   /$$__  $$ /$$__  $$                    
-| $$  | $$| $$      | $$  \ $$| $$$$$$$$| $$  \ $$      | $$_/  | $$  \ $$| $$  \__/                    
-| $$  | $$| $$      | $$  | $$| $$_____/| $$  | $$      | $$    | $$  | $$| $$                          
-|  $$$$$$$|  $$$$$$$| $$  | $$|  $$$$$$$| $$  | $$      | $$    |  $$$$$$/| $$                          
- \_______/ \_______/|__/  |__/ \_______/|__/  |__/      |__/     \______/ |__/                          
-                                                                                                        
-                                                                                                        
-                                                                                                        
+/*                                                                                                                      
  /$$   /$$                     /$$       /$$$$$$$  /$$   /$$        /$$$$$$   /$$$$$$    /$$   /$$$$$$$$
 | $$  | $$                    | $$      | $$__  $$| $$  | $$       /$$__  $$ /$$$_  $$ /$$$$  |_____ $$/
 | $$  | $$  /$$$$$$   /$$$$$$$| $$   /$$| $$  \ $$| $$  | $$      |__/  \ $$| $$$$\ $$|_  $$       /$$/ 
@@ -19,7 +7,7 @@
 | $$  | $$ /$$__  $$| $$      | $$_  $$ | $$  \ $$| $$  | $$      | $$      | $$ \ $$$  | $$    /$$/    
 | $$  | $$|  $$$$$$$|  $$$$$$$| $$ \  $$| $$  | $$|  $$$$$$/      | $$$$$$$$|  $$$$$$/ /$$$$$$ /$$/     
 |__/  |__/ \_______/ \_______/|__/  \__/|__/  |__/ \______/       |________/ \______/ |______/|__/      
-  
+
 */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
@@ -88,7 +76,8 @@ body {
       padding: 15px 20px; }
       body #hero #hero-banner #hero-logo {
         margin: 0 auto;
-        width: 80%; }
+        width: 80%;
+        max-width: 250px; }
       body #hero #hero-banner #hero-info {
         padding: 0px; }
         body #hero #hero-banner #hero-info #date-text {
@@ -99,11 +88,12 @@ body {
           color: black;
           border-color: #4BCF7E;
           box-shadow: none; }
-        body #hero #hero-banner #hero-info #email-sub-submit {
+        body #hero #hero-banner #hero-info .btn {
           width: 100%;
           background-color: #4BCF7E;
-          color: white; }
-          body #hero #hero-banner #hero-info #email-sub-submit h4 {
+          color: white;
+          outline: none; }
+          body #hero #hero-banner #hero-info .btn h4 {
             margin: 5px 0px; }
       body #hero #hero-banner #hero-webosphere {
         position: absolute;
@@ -270,31 +260,34 @@ body {
       text-align: right;
       padding-right: 15px;
       border-bottom: 1px dotted white;
-      /* logo on subpages navbars*/ }
+      /* logo on subpages navbars*/
+      /* text logo on subpages navbars*/ }
       .subpage-section .subpage-hero .subpage-nav img {
         padding: 5px 0 5px 175px;
         height: 50px;
         float: left; }
+      .subpage-section .subpage-hero .subpage-nav .text-logo {
+        color: white;
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+        line-height: 50px; }
       .subpage-section .subpage-hero .subpage-nav h4 {
         margin: 0px; }
       .subpage-section .subpage-hero .subpage-nav ul {
+        padding: 0;
         margin: 0;
-        height: 50px;
-        float: right; }
+        height: 50px; }
       .subpage-section .subpage-hero .subpage-nav li {
-        float: left;
         height: 100%;
         display: inline-block; }
       .subpage-section .subpage-hero .subpage-nav li a {
         display: block;
         line-height: 50px;
-        padding: 0px 25px;
+        padding: 0px 20px;
         text-transform: lowercase;
-        text-decoration: none;
         color: white;
         transition: all 0.25s ease-in-out; }
-      .subpage-section .subpage-hero .subpage-nav li a:hover {
-        margin: 5px 5px; }
     .subpage-section .subpage-hero .subpage-hero-title {
       text-align: center; }
       .subpage-section .subpage-hero .subpage-hero-title h1 {
