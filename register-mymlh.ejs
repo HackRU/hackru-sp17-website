@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<!--                                                                                                                       
+<!--
  /$$   /$$                     /$$       /$$$$$$$  /$$   /$$        /$$$$$$   /$$$$$$    /$$   /$$$$$$$$
 | $$  | $$                    | $$      | $$__  $$| $$  | $$       /$$__  $$ /$$$_  $$ /$$$$  |_____ $$/
-| $$  | $$  /$$$$$$   /$$$$$$$| $$   /$$| $$  \ $$| $$  | $$      |__/  \ $$| $$$$\ $$|_  $$       /$$/ 
-| $$$$$$$$ |____  $$ /$$_____/| $$  /$$/| $$$$$$$/| $$  | $$        /$$$$$$/| $$ $$ $$  | $$      /$$/  
-| $$__  $$  /$$$$$$$| $$      | $$$$$$/ | $$__  $$| $$  | $$       /$$____/ | $$\ $$$$  | $$     /$$/   
-| $$  | $$ /$$__  $$| $$      | $$_  $$ | $$  \ $$| $$  | $$      | $$      | $$ \ $$$  | $$    /$$/    
-| $$  | $$|  $$$$$$$|  $$$$$$$| $$ \  $$| $$  | $$|  $$$$$$/      | $$$$$$$$|  $$$$$$/ /$$$$$$ /$$/     
-|__/  |__/ \_______/ \_______/|__/  \__/|__/  |__/ \______/       |________/ \______/ |______/|__/      
-  
+| $$  | $$  /$$$$$$   /$$$$$$$| $$   /$$| $$  \ $$| $$  | $$      |__/  \ $$| $$$$\ $$|_  $$       /$$/
+| $$$$$$$$ |____  $$ /$$_____/| $$  /$$/| $$$$$$$/| $$  | $$        /$$$$$$/| $$ $$ $$  | $$      /$$/
+| $$__  $$  /$$$$$$$| $$      | $$$$$$/ | $$__  $$| $$  | $$       /$$____/ | $$\ $$$$  | $$     /$$/
+| $$  | $$ /$$__  $$| $$      | $$_  $$ | $$  \ $$| $$  | $$      | $$      | $$ \ $$$  | $$    /$$/
+| $$  | $$|  $$$$$$$|  $$$$$$$| $$ \  $$| $$  | $$|  $$$$$$/      | $$$$$$$$|  $$$$$$/ /$$$$$$ /$$/
+|__/  |__/ \_______/ \_______/|__/  \__/|__/  |__/ \______/       |________/ \______/ |______/|__/
+
 -->
 <html lang="en">
 <head>
@@ -18,7 +18,7 @@
 	<title>HackRU - Registration</title>
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/custom.css">
-	
+
 	<script src="./js/jquery-3.1.1.min.js"></script>
 	<script src="./js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/8dec7403ea.js"></script>
@@ -32,7 +32,7 @@
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
 		<div class="row subpage-section" id="registration">
-			
+
 			<div class="row subpage-hero">
 				<div class="col-sm-12 subpage-nav"></div>
 				<div class="col-sm-12 subpage-hero-title">
@@ -45,16 +45,16 @@
 
 					<h4>Awesome <%= user.mlh_data.first_name %>, you're signed in with myMLH! Now we just need a little bit more information about you.</h4>
 
-					<!-- remove this block after dev -->
-					<p class="bg-danger text-muted text-left">DEV TODO:<br>-MAKE THE FORM'S ACTION LINK WITH BACKEND CODE<br>-PREVENT LARGE FILE UPLOADS FOR RESUME INPUTS (MAYBE CONSTRAIN TO PDFs/DOCs ONLY?)</p>
-					<!-- remove this block after dev -->
+					<% if(message) { %>
+					  <p><%= message %></p>
+					<% } %>
 
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form" method="post" action="/register-mymlh" enctype="multipart/form-data">
 
 						<div class="form-group">
 							<label for="github-handle-input" class="col-sm-12 col-md-6 control-label"><h6>Github Username</h6></label>
 							<div class="col-sm-12 col-md-6">
-								<input type="text" class="form-control" id="github-handle-input" placeholder="githubhandle" pattern="\S+">
+								<input type="text" name="github" class="form-control" id="github-handle-input" pattern="\S+" placeholder=<% user.github %>>
 							</div>
 						</div>
 
@@ -62,16 +62,16 @@
 							<label for="resume-upload-input" class="col-sm-12 col-md-6 control-label"><h6>Resumé</h6></label>
 							<div class="col-sm-12 col-md-4">
 								<label class="btn btn-default btn-file">
-									<p>Upload</p><input type="file" id="resume-upload-input" class="hidden">
+									<p>Upload</p><input type="file" name="resume" id="resume-upload-input" class="hidden">
 								</label>
 							</div>
 							<div class="col-sm-12 col-md-2"><p id="file-selector-notif"></p></div>
 						</div>
 
 
-						
+
 						<p class="text-left" id="registration-terms">We participate in Major League Hacking (MLH) as an MLH Member Event. By accepting, you authorize us to share certain application/registration information for event administration, ranking, MLH admission, and occasional messages about hackathons in line with the <a href="/">MLH Privacy Policy</a>. Also, you understand that by uploading your resumé and Github handle, it can potentially be shared with sponsors of HackRU and you may be contacted by recruiters.</p>
-						
+
 
 						<!-- old registration checkbox
 
@@ -82,9 +82,9 @@
 						-->
 
 						<div id="registration-checkbox">
-							<p><input type="checkbox" required>I have read and agree with the rules and conditions above.</p>
+							<p><input type="checkbox" name="data_sharing" required>I have read and agree with the rules and conditions above.</p>
 						</div>
-						
+
 
 						<input class="btn btn-default content-button" type="submit" value="Submit">
 

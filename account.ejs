@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<!--                                                                                                                       
+<!--
  /$$   /$$                     /$$       /$$$$$$$  /$$   /$$        /$$$$$$   /$$$$$$    /$$   /$$$$$$$$
 | $$  | $$                    | $$      | $$__  $$| $$  | $$       /$$__  $$ /$$$_  $$ /$$$$  |_____ $$/
-| $$  | $$  /$$$$$$   /$$$$$$$| $$   /$$| $$  \ $$| $$  | $$      |__/  \ $$| $$$$\ $$|_  $$       /$$/ 
-| $$$$$$$$ |____  $$ /$$_____/| $$  /$$/| $$$$$$$/| $$  | $$        /$$$$$$/| $$ $$ $$  | $$      /$$/  
-| $$__  $$  /$$$$$$$| $$      | $$$$$$/ | $$__  $$| $$  | $$       /$$____/ | $$\ $$$$  | $$     /$$/   
-| $$  | $$ /$$__  $$| $$      | $$_  $$ | $$  \ $$| $$  | $$      | $$      | $$ \ $$$  | $$    /$$/    
-| $$  | $$|  $$$$$$$|  $$$$$$$| $$ \  $$| $$  | $$|  $$$$$$/      | $$$$$$$$|  $$$$$$/ /$$$$$$ /$$/     
-|__/  |__/ \_______/ \_______/|__/  \__/|__/  |__/ \______/       |________/ \______/ |______/|__/      
-  
+| $$  | $$  /$$$$$$   /$$$$$$$| $$   /$$| $$  \ $$| $$  | $$      |__/  \ $$| $$$$\ $$|_  $$       /$$/
+| $$$$$$$$ |____  $$ /$$_____/| $$  /$$/| $$$$$$$/| $$  | $$        /$$$$$$/| $$ $$ $$  | $$      /$$/
+| $$__  $$  /$$$$$$$| $$      | $$$$$$/ | $$__  $$| $$  | $$       /$$____/ | $$\ $$$$  | $$     /$$/
+| $$  | $$ /$$__  $$| $$      | $$_  $$ | $$  \ $$| $$  | $$      | $$      | $$ \ $$$  | $$    /$$/
+| $$  | $$|  $$$$$$$|  $$$$$$$| $$ \  $$| $$  | $$|  $$$$$$/      | $$$$$$$$|  $$$$$$/ /$$$$$$ /$$/
+|__/  |__/ \_______/ \_______/|__/  \__/|__/  |__/ \______/       |________/ \______/ |______/|__/
+
 -->
 <html lang="en">
 <head>
@@ -18,7 +18,7 @@
 	<title>HackRU - Account</title>
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/custom.css">
-	
+
 	<script src="./js/jquery-3.1.1.min.js"></script>
 	<script src="./js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/8dec7403ea.js"></script>
@@ -32,7 +32,7 @@
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
 		<div class="row subpage-section" id="manage-account">
-			
+
 
 			<div class="row subpage-hero">
 				<div class="col-sm-12 subpage-nav"></div>
@@ -44,12 +44,16 @@
 			<div class="row subpage-content text-center">
 				<div class="col-sm-5">
 
-					<form class="form-horizontal" role="form">
+					<% if(message) { %>
+					  <p><%= message %></p>
+					<% } %>
+
+					<form class="form-horizontal" role="form" method="post" action="/account" enctype="multipart/form-data">
 
 						<div class="form-group">
 							<label for="github-handle-input" class="col-sm-12 col-md-6 control-label"><h6>Github Username</h6></label>
 							<div class="col-sm-12 col-md-6">
-								<input type="text" class="form-control" id="github-handle-input" placeholder="githubhandle" pattern="\S+">
+								<input type="text" name="github" class="form-control" id="github-handle-input" pattern="\S+" placeholder=<%= user.github %>>
 							</div>
 						</div>
 
@@ -57,18 +61,17 @@
 							<label for="resume-upload-input" class="col-sm-12 col-md-6 control-label"><h6>Resumé</h6></label>
 							<div class="col-sm-12 col-md-4">
 								<label class="btn btn-default btn-file">
-									<p>Upload</p><input type="file" id="resume-upload-input" class="hidden">
+									<p>Upload</p><input type="file" name="resume" id="resume-upload-input" class="hidden">
 								</label>
 							</div>
 							<div class="col-sm-12 col-md-2"><p id="file-selector-notif"></p></div>
 						</div>
 
-						<p class="bg-danger">DEV: DONT REMOVE THIS UNTIL BUTTON ACTIONS/FORM ACTIONS ARE FINALIZED</p>
 						<input class="btn btn-default content-button" type="submit" value="Save">
-						<a href="dashboard.html" class="btn btn-default content-button">Dashboard</a>
+						<a href="/dashboard" class="btn btn-default content-button">Dashboard</a>
 					</form>
 
-					
+
 
 				</div>
 			</div>
