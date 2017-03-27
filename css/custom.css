@@ -446,7 +446,8 @@ body {
           color: black; }
       .subpage-section .subpage-content form #registration-terms {
         margin: 0;
-        margin: 5vh 0; }
+        margin: 5vh 0;
+        font-size: 17px; }
         .subpage-section .subpage-content form #registration-terms a {
           color: inherit;
           text-decoration: none;
@@ -455,6 +456,7 @@ body {
       .subpage-section .subpage-content form #registration-checkbox {
         margin: 5vh 0; }
         .subpage-section .subpage-content form #registration-checkbox p {
+          font-size: 17px;
           text-align: left;
           margin: 0 0 0 20px; }
           .subpage-section .subpage-content form #registration-checkbox p input {
