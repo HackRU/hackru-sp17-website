@@ -340,15 +340,13 @@ body {
         float: left; }
       .subpage-section .subpage-hero .subpage-nav .text-logo {
         color: white;
-        margin: 0;
         padding: 0;
-        font-size: 18px;
         line-height: 50px; }
         .subpage-section .subpage-hero .subpage-nav .text-logo a {
           color: white;
           text-decoration: none; }
       .subpage-section .subpage-hero .subpage-nav h4 {
-        font-size: 3.5vmin;
+        font-size: 2vmin;
         margin: 0px; }
       .subpage-section .subpage-hero .subpage-nav ul {
         padding: 0;
