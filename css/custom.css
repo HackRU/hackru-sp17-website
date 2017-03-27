@@ -9,16 +9,14 @@
 |__/  |__/ \_______/ \_______/|__/  \__/|__/  |__/ \______/       |________/ \______/ |______/|__/      
 
 */
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700");
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
 @font-face {
   font-family: Circular;
   font-weight: bold;
-  src: local("Circular"), url("../assets/CircularStd-Bold.otf") format("opentype"); }
+  src: local("Circular"), url("../fonts/CircularStd-Bold.otf") format("opentype"); }
 @font-face {
   font-family: Circular;
   font-weight: normal;
-  src: local("Circular"), url("../assets/CircularStd-Book.otf") format("opentype"); }
+  src: local("Circular"), url("../fonts/CircularStd-Book.otf") format("opentype"); }
 .text-left-not-xs, .text-left-not-sm, .text-left-not-md, .text-left-not-lg {
   text-align: left; }
 
