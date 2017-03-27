@@ -355,6 +355,9 @@ body {
         .subpage-section .subpage-hero .subpage-nav .text-logo a {
           color: white;
           text-decoration: none; }
+      .subpage-section .subpage-hero .subpage-nav h3 {
+        font-size: 25px;
+        margin: 0px; }
       .subpage-section .subpage-hero .subpage-nav h4 {
         font-size: 18px;
         margin: 0px; }
