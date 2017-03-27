@@ -315,7 +315,7 @@ body {
       display: inline-block;
       /*border: green 1px solid;*/ }
     body #footer h5 {
-      font-size: 2vmin;
+      font-size: 20px;
       line-height: 100px;
       margin: 0; }
       body #footer h5 a {
@@ -356,7 +356,10 @@ body {
           color: white;
           text-decoration: none; }
       .subpage-section .subpage-hero .subpage-nav h4 {
-        font-size: 2vmin;
+        font-size: 18px;
+        margin: 0px; }
+      .subpage-section .subpage-hero .subpage-nav p {
+        font-size: 15px;
         margin: 0px; }
       .subpage-section .subpage-hero .subpage-nav ul {
         padding: 0;
@@ -365,6 +368,8 @@ body {
       .subpage-section .subpage-hero .subpage-nav li {
         height: 100%;
         display: inline-block; }
+        .subpage-section .subpage-hero .subpage-nav li p a {
+          padding: 0 10px; }
       .subpage-section .subpage-hero .subpage-nav li a {
         display: block;
         line-height: 50px;
@@ -374,10 +379,15 @@ body {
     .subpage-section .subpage-hero .subpage-hero-title {
       text-align: center; }
       .subpage-section .subpage-hero .subpage-hero-title h1 {
-        font-size: 7vmin;
+        font-size: 50px;
         line-height: 25vh;
         margin: 0;
         color: white; }
+      .subpage-section .subpage-hero .subpage-hero-title h3 {
+        font-size: 20px;
+        color: white;
+        margin: 0;
+        padding: 25px 10px; }
   .subpage-section .subpage-content {
     color: #4BCF7E; }
     .subpage-section .subpage-content > div {
@@ -385,12 +395,12 @@ body {
       float: none; }
     .subpage-section .subpage-content .content-button {
       color: white;
-      width: 75%;
+      width: 100%;
       height: 7vh;
       line-height: 7vh;
       font-family: 'Circular', sans-serif;
       text-transform: uppercase;
-      font-size: 2.5vmin;
+      font-size: 15px;
       background-color: #4BCF7E;
       border: none;
       padding-top: 0;
