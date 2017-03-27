@@ -36,8 +36,8 @@ $(document).ready(function() {
 
 function loadExternalHTMLTemplates() {
 	// templating.
-	$(".subpage-nav").load("../templates/subpage-nav.html"); // load nav bar for all subpages
-	$("#footer").load("../templates/footer.html"); // load footer for all pages
+	$(".subpage-nav").load("../temps/subpage-nav.html"); // load nav bar for all subpages
+	$("#footer").load("../temps/footer.html"); // load footer for all pages
 	return;
 }
 
