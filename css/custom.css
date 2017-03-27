@@ -19,6 +19,78 @@
   font-family: Circular;
   font-weight: normal;
   src: local("Circular"), url("../assets/CircularStd-Book.otf") format("opentype"); }
+.text-left-not-xs, .text-left-not-sm, .text-left-not-md, .text-left-not-lg {
+  text-align: left; }
+
+.text-center-not-xs, .text-center-not-sm, .text-center-not-md, .text-center-not-lg {
+  text-align: center; }
+
+.text-right-not-xs, .text-right-not-sm, .text-right-not-md, .text-right-not-lg {
+  text-align: right; }
+
+.text-justify-not-xs, .text-justify-not-sm, .text-justify-not-md, .text-justify-not-lg {
+  text-align: justify; }
+
+@media (max-width: 767px) {
+  .text-left-not-xs, .text-center-not-xs, .text-right-not-xs, .text-justify-not-xs {
+    text-align: inherit; }
+
+  .text-left-xs {
+    text-align: left; }
+
+  .text-center-xs {
+    text-align: center; }
+
+  .text-right-xs {
+    text-align: right; }
+
+  .text-justify-xs {
+    text-align: justify; } }
+@media (min-width: 768px) and (max-width: 991px) {
+  .text-left-not-sm, .text-center-not-sm, .text-right-not-sm, .text-justify-not-sm {
+    text-align: inherit; }
+
+  .text-left-sm {
+    text-align: left; }
+
+  .text-center-sm {
+    text-align: center; }
+
+  .text-right-sm {
+    text-align: right; }
+
+  .text-justify-sm {
+    text-align: justify; } }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .text-left-not-md, .text-center-not-md, .text-right-not-md, .text-justify-not-md {
+    text-align: inherit; }
+
+  .text-left-md {
+    text-align: left; }
+
+  .text-center-md {
+    text-align: center; }
+
+  .text-right-md {
+    text-align: right; }
+
+  .text-justify-md {
+    text-align: justify; } }
+@media (min-width: 1200px) {
+  .text-left-not-lg, .text-center-not-lg, .text-right-not-lg, .text-justify-not-lg {
+    text-align: inherit; }
+
+  .text-left-lg {
+    text-align: left; }
+
+  .text-center-lg {
+    text-align: center; }
+
+  .text-right-lg {
+    text-align: right; }
+
+  .text-justify-lg {
+    text-align: justify; } }
 html {
   background-color: white; }
 
@@ -26,6 +98,8 @@ body {
   overflow-y: scroll;
   color: black;
   font-family: 'Circular', sans-serif; }
+  body .container-fluid .row {
+    overflow: hidden; }
   body h1, body h2, body h3, body h4, body h5, body h6 {
     font-weight: bold; }
   body h5 {
@@ -168,10 +242,8 @@ body {
         overflow: hidden; }
         body #about #about-location #about-location-map iframe {
           pointer-events: none; }
-      body #about #about-location #about-location-text {
-        text-align: right; }
-        body #about #about-location #about-location-text .short-separator {
-          float: right; }
+      body #about #about-location #about-location-text .short-separator {
+        float: right; }
   body #schedule {
     background-color: #4BCF7E;
     color: white;
@@ -272,7 +344,11 @@ body {
         padding: 0;
         font-size: 18px;
         line-height: 50px; }
+        .subpage-section .subpage-hero .subpage-nav .text-logo a {
+          color: white;
+          text-decoration: none; }
       .subpage-section .subpage-hero .subpage-nav h4 {
+        font-size: 3.5vmin;
         margin: 0px; }
       .subpage-section .subpage-hero .subpage-nav ul {
         padding: 0;
@@ -286,11 +362,11 @@ body {
         line-height: 50px;
         padding: 0px 20px;
         text-transform: lowercase;
-        color: white;
-        transition: all 0.25s ease-in-out; }
+        color: white; }
     .subpage-section .subpage-hero .subpage-hero-title {
       text-align: center; }
       .subpage-section .subpage-hero .subpage-hero-title h1 {
+        font-size: 10vmin;
         line-height: 25vh;
         margin: 0;
         color: white; }
