@@ -247,13 +247,15 @@ body {
     color: white;
     padding: 50px 0px; }
     body #schedule .section-subtitle {
+      font-size: 28px;
       padding: 25px 0px 10px 0px;
       text-align: center; }
     body #schedule .sched-event {
       width: 100%;
       float: left; }
       body #schedule .sched-event p {
-        margin: 0px; }
+        margin: 0px;
+        font-size: 18px; }
       body #schedule .sched-event .sched-time {
         width: 40%;
         display: block;
@@ -293,9 +295,11 @@ body {
     color: white;
     padding: 50px 0px; }
     body #faqs .section-subtitle {
+      font-size: 28px;
       color: white;
       padding-top: 40px; }
     body #faqs p {
+      font-size: 18px;
       color: black;
       padding-top: 10px;
       font-weight: normal; }
