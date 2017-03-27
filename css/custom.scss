@@ -106,6 +106,7 @@ body {
 			ul {
 				margin: 0;
 				float: right;
+				padding-right: 175px;
 			}
 			
 			li {
@@ -137,10 +138,11 @@ body {
 			padding: 15px 20px;
 			
 
-
+			
 
 			#hero-logo {
-				width: 100%;
+				margin: 0 auto;
+				width: 80%;
 			}
 
 			#hero-info {
@@ -193,7 +195,7 @@ body {
 
 		#hero-nav {
 			text-align: right;
-			padding-right: 15px;
+			padding-right: 175px;
 
 			#mlh-banner {
 				float: right;
@@ -360,8 +362,16 @@ body {
 
 	#sponsors {
 		background-color: white;
-		height: $browser-height;
 		padding: 50px 0px;
+		
+		.sponsor-logo-row {
+			padding: 50px 0px;
+		}
+
+		.sponsor-logo {
+			width: 80%;
+			max-height: auto;
+		}
 
 		.section-title {
 			color: $dark-green;
@@ -428,9 +438,16 @@ body {
 		margin-bottom: 7vh;
 
 		.subpage-nav {
-
 			text-align: right;
 			padding-right: 15px;
+			border-bottom: 1px dotted white;
+			
+			/* logo on subpages navbars*/
+			img {
+				padding: 5px 0 5px 175px;
+				height: 50px;
+				float: left;
+			}
 
 			h4 {
 				margin: 0px;

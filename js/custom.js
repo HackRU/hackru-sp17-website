@@ -1,7 +1,7 @@
 // check if current position is past halfpoint of hero
 // if so, we make the secondary navbar appear on top
 $(window).on('scroll', function() {
-	console.log("scrolling...");
+	// console.log("scrolling...");
 	var heroBottomHalf = $('#hero').height() / 2;
     var stop = Math.round($(window).scrollTop());
     if (stop > heroBottomHalf) {
@@ -15,14 +15,15 @@ $(window).on('scroll', function() {
 $(document).ready(function() {
 	
 	var pageLocation = window.location.pathname; // used to run certain JS on specific pages
-	
+
+	loadExternalHTMLTemplates();
+
 	if (pageLocation == '/' ) { // run on home page (landing page)
+		// console.log("THIS IS THE HOME PAGE.");
 		smoothScrollEnable();
 		toggleMapScrollOnClickAndLeave();
 	}
 	else {
-		loadExternalHTMLTemplates();
-		
 		// on resume file upload, change the notification to say what file was uploaded
 		$('#resume-upload-input').on("change", function(){
 			changeFileUploadPreview();
@@ -36,6 +37,7 @@ $(document).ready(function() {
 function loadExternalHTMLTemplates() {
 	// templating.
 	$(".subpage-nav").load("../templates/subpage-nav.html"); // load nav bar for all subpages
+	$("#footer").load("../templates/footer.html"); // load footer for all pages
 	return;
 }
 

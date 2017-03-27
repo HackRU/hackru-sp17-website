@@ -65,7 +65,8 @@ body {
         margin: 0px; }
       body #hero #nav-secondary ul {
         margin: 0;
-        float: right; }
+        float: right;
+        padding-right: 175px; }
       body #hero #nav-secondary li {
         float: left;
         height: 100%;
@@ -86,7 +87,8 @@ body {
       height: 100%;
       padding: 15px 20px; }
       body #hero #hero-banner #hero-logo {
-        width: 100%; }
+        margin: 0 auto;
+        width: 80%; }
       body #hero #hero-banner #hero-info {
         padding: 0px; }
         body #hero #hero-banner #hero-info #date-text {
@@ -117,7 +119,7 @@ body {
           color: black; }
     body #hero #hero-nav {
       text-align: right;
-      padding-right: 15px; }
+      padding-right: 175px; }
       body #hero #hero-nav #mlh-banner {
         float: right;
         max-width: 100px;
@@ -218,8 +220,12 @@ body {
       width: 100%; }
   body #sponsors {
     background-color: white;
-    height: 100vh;
     padding: 50px 0px; }
+    body #sponsors .sponsor-logo-row {
+      padding: 50px 0px; }
+    body #sponsors .sponsor-logo {
+      width: 80%;
+      max-height: auto; }
     body #sponsors .section-title {
       color: #4BCF7E; }
   body #faqs {
@@ -262,7 +268,13 @@ body {
     margin-bottom: 7vh; }
     .subpage-section .subpage-hero .subpage-nav {
       text-align: right;
-      padding-right: 15px; }
+      padding-right: 15px;
+      border-bottom: 1px dotted white;
+      /* logo on subpages navbars*/ }
+      .subpage-section .subpage-hero .subpage-nav img {
+        padding: 5px 0 5px 175px;
+        height: 50px;
+        float: left; }
       .subpage-section .subpage-hero .subpage-nav h4 {
         margin: 0px; }
       .subpage-section .subpage-hero .subpage-nav ul {
