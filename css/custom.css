@@ -305,11 +305,24 @@ body {
       border-color: black; }
   body #footer {
     background-color: black;
-    height: 18vh;
     color: white; }
     body #footer .section-title {
       padding: 0px;
       line-height: 18vh; }
+    body #footer img {
+      max-height: 100px;
+      padding: 25px 10px;
+      width: auto;
+      max-width: 150px;
+      display: inline-block;
+      /*border: green 1px solid;*/ }
+    body #footer h5 {
+      font-size: 2vmin;
+      line-height: 100px;
+      margin: 0; }
+      body #footer h5 a {
+        color: white;
+        margin: 0 10px; }
 
 .table-row {
   display: table;
@@ -324,7 +337,6 @@ body {
   min-height: 100vh;
   padding-bottom: 7vh; }
   .subpage-section .subpage-hero {
-    height: 35vh;
     background: url("../assets/hero-green.jpg");
     background-size: cover;
     margin-bottom: 7vh; }
@@ -364,7 +376,7 @@ body {
     .subpage-section .subpage-hero .subpage-hero-title {
       text-align: center; }
       .subpage-section .subpage-hero .subpage-hero-title h1 {
-        font-size: 10vmin;
+        font-size: 7vmin;
         line-height: 25vh;
         margin: 0;
         color: white; }

@@ -480,12 +480,31 @@ body {
 	
 	#footer {
 		background-color: black;
-		height: 18vh;
 		color: white;
 
 		.section-title {
 			padding: 0px;
 			line-height: 18vh;
+		}
+
+		img {
+			max-height: 100px;
+			padding: 25px 10px;
+			width: auto;
+			max-width: 150px;
+			display: inline-block;
+			/*border: green 1px solid;*/
+		}
+
+		h5 {
+			font-size: 2vmin;
+			line-height: 100px;
+			margin: 0;
+
+			a {
+				color: white;
+				margin: 0 10px;
+			}
 		}
 	}
 }
@@ -511,7 +530,7 @@ body {
 
 	.subpage-hero {
 
-		height: 35vh;
+		// height: 35vh;
 		background: url('../assets/hero-green.jpg');
 		background-size: cover;
 		margin-bottom: 7vh;
@@ -571,7 +590,7 @@ body {
 			text-align: center;
 
 			h1 {
-				font-size: 10vmin;
+				font-size: 7vmin;
 				line-height: 25vh;
 				margin: 0;
 				color: white;
