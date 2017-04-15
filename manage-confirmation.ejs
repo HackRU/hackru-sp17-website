@@ -67,6 +67,8 @@
 
 						<div class="btn-group" data-toggle="buttons" id="attendance-select">
 
+							<% if (user.registration_status >= 3) { %>
+
 							<label class="btn btn-primary active" id="attending-label">
 								<input type="radio" name="attendance" id="attending" autocomplete="off" value="attending" checked>
 								<h1><i class="fa fa-smile-o" aria-hidden="true"></i> Attending</h1>
@@ -76,6 +78,20 @@
 								<input type="radio" name="attendance" id="not-attending" autocomplete="off" value="not-attending">
 								<h1><i class="fa fa-frown-o" aria-hidden="true"></i> Not Going</h1>
 							</label>
+
+							<% } else if (user.registration_status < 3) { %>
+
+							<label class="btn btn-primary" id="attending-label">
+								<input type="radio" name="attendance" id="attending" autocomplete="off" value="attending">
+								<h1><i class="fa fa-smile-o" aria-hidden="true"></i> Attending</h1>
+							</label>
+
+							<label class="btn btn-primary active" id="not-attending-label">
+								<input type="radio" name="attendance" id="not-attending" autocomplete="off" value="not-attending" checked>
+								<h1><i class="fa fa-frown-o" aria-hidden="true"></i> Not Going</h1>
+							</label>
+
+							<% } %>
 
 						</div>
 
