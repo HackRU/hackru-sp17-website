@@ -40,72 +40,69 @@
 
 		<div class="row subpage-section" id="manage-confirmation">
 
-			<div class="row subpage-hero">
-				<div class="col-xs-12 subpage-nav"></div>
-				<div class="col-xs-12 subpage-hero-title">
-					<h1 class="hidden-xs">Change Confirmation Status</h1>
-					<h3 class="visible-xs-block">Change Confirmation Status</h3>
+			<div class="col-xs-12">
+				<div class="row subpage-hero">
+					<div class="col-xs-12 subpage-nav"></div>
+					<div class="col-xs-12 subpage-hero-title">
+						<h1 class="hidden-xs">Change Confirmation Status</h1>
+						<h3 class="visible-xs-block">Change Confirmation Status</h3>
+					</div>
 				</div>
-			</div>
-
-			<div class="row subpage-content text-center">
-				<div class="col-xs-10 col-md-7 col-lg-5">
-
-					<% if(user.registration_status == 1) { %>
+				
+				<div class="row subpage-content text-center">
+					<div class="col-xs-10 col-md-7 col-lg-5">
+						
+						<% if(user.registration_status == 1) { %>
 						<h3>Currently: Registered </h3>
 						<a title="Being Registered doesn't mean you can attend. The next step is Confirming Your Attendance. We'll be emailing instructions on how to do that soon! Stay tuned!">What does this mean? Hover over me!</a>
-					<% } else if(user.registration_status == 2) { %>
+						<% } else if(user.registration_status == 2) { %>
 						<h3>Currently: Not Attending </h3>
-					<% } else if(user.registration_status == 3) { %>
+						<% } else if(user.registration_status == 3) { %>
 						<h3>Currently: Attending!</h3>
-					<% } else if(user.registration_status == 4 ) { %>
+						<% } else if(user.registration_status == 4 ) { %>
 						<h3>Currently: Waitlisted </h3>
-					<% } %>
-					<h3>Let us know if you can make it to HackRU!</h3>
-
-					<form action="/confirm-status" class="form-horizontal" method="post">
-
-						<div class="btn-group" data-toggle="buttons" id="attendance-select">
-
-							<% if (user.registration_status >= 3) { %>
-
-							<label class="btn btn-primary active" id="attending-label">
-								<input type="radio" name="attendance" id="attending" autocomplete="off" value="attending" checked>
-								<h1><i class="fa fa-smile-o" aria-hidden="true"></i> Attending</h1>
-							</label>
-
-							<label class="btn btn-primary" id="not-attending-label">
-								<input type="radio" name="attendance" id="not-attending" autocomplete="off" value="not-attending">
-								<h1><i class="fa fa-frown-o" aria-hidden="true"></i> Not Going</h1>
-							</label>
-
-							<% } else if (user.registration_status < 3) { %>
-
-							<label class="btn btn-primary" id="attending-label">
-								<input type="radio" name="attendance" id="attending" autocomplete="off" value="attending">
-								<h1><i class="fa fa-smile-o" aria-hidden="true"></i> Attending</h1>
-							</label>
-
-							<label class="btn btn-primary active" id="not-attending-label">
-								<input type="radio" name="attendance" id="not-attending" autocomplete="off" value="not-attending" checked>
-								<h1><i class="fa fa-frown-o" aria-hidden="true"></i> Not Going</h1>
-							</label>
-
-							<% } %>
-
-						</div>
-
-						<!-- <p class="bg-danger">DEV: DONT REMOVE THIS UNTIL BUTTON ACTIONS/FORM ACTIONS ARE FINALIZED</p> -->
-						<input class="btn btn-default content-button" type="submit" value="Save">
-						<a href="/dashboard" class="btn btn-default content-button">Dashboard</a>
-					</form>
-
+						<% } %>
+						<h3>Let us know if you can make it to HackRU!</h3>
+						
+						<form action="/confirm-status" class="form-horizontal" method="post">
+							
+							<div class="btn-group" data-toggle="buttons" id="attendance-select">
+								
+								<% if (user.registration_status >= 3) { %>
+								
+								<label class="btn btn-primary active" id="attending-label">
+									<input type="radio" name="attendance" id="attending" autocomplete="off" value="attending" checked>
+									<h1><i class="fa fa-smile-o" aria-hidden="true"></i> Attending</h1>
+								</label>
+								
+								<label class="btn btn-primary" id="not-attending-label">
+									<input type="radio" name="attendance" id="not-attending" autocomplete="off" value="not-attending">
+									<h1><i class="fa fa-frown-o" aria-hidden="true"></i> Not Going</h1>
+								</label>
+								
+								<% } else if (user.registration_status < 3) { %>
+								
+								<label class="btn btn-primary" id="attending-label">
+									<input type="radio" name="attendance" id="attending" autocomplete="off" value="attending">
+									<h1><i class="fa fa-smile-o" aria-hidden="true"></i> Attending</h1>
+								</label>
+								
+								<label class="btn btn-primary active" id="not-attending-label">
+									<input type="radio" name="attendance" id="not-attending" autocomplete="off" value="not-attending" checked>
+									<h1><i class="fa fa-frown-o" aria-hidden="true"></i> Not Going</h1>
+								</label>
+								
+								<% } %>
+								
+							</div>
+							
+							<input class="btn btn-default content-button" type="submit" value="Save">
+							<a href="/dashboard" class="btn btn-default content-button">Dashboard</a>
+						</form>
+						
+					</div>
 				</div>
 			</div>
-
-
-
-
 
 		</div>
 
