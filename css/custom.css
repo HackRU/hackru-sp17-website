@@ -479,10 +479,10 @@ body {
       .subpage-section .subpage-content form #file-selector-notif {
         white-space: nowrap; }
 
-#dashboard .card-container {
-  border: 2px solid #4BCF7E; }
-  #dashboard .card-container h1 {
-    color: #4BCF7E; }
+#dashboarddayof .subpage-hero {
+  margin-bottom: 0; }
+#dashboarddayof .card-container h1 {
+  color: #4BCF7E; }
 
 #manage-confirmation #attendance-select {
   width: 100%;

@@ -768,13 +768,17 @@ body {
 	}
 }
 
-#dashboard {
+#dashboarddayof {
+
+	.subpage-hero {
+		margin-bottom: 0;
+	}
 	
 	.card-container {
 		
 		
 
-		border: 2px solid $dark-green;
+		//border: 2px solid $dark-green;
 
 		h1 {
 			color: $dark-green;

@@ -38,7 +38,7 @@
 <div class="container-fluid">
 
 
-    <div class="row subpage-section" id="dashboard">
+    <div class="row subpage-section" id="dashboarddayof">
 
         <div class="col-xs-12">
             <div class="row subpage-hero">
@@ -52,36 +52,65 @@
 
             <div class="row">
                 <div class="col-md-3 card-container">
-                    <h1 class="text-center">/profile</h1>
-                    <h3>Welcome, user!</h3>
-                    <p><strong>School:</strong> <%= user.mlh_data.school.name %>
-                        <br>
-                        <strong>Year:</strong> <%= user.mlh_data.level_of_study %>
-                        <br>
-                        <strong>Major:</strong> <%= user.mlh_data.major %>
-                        <br>
-                        <strong>Github:</strong> <a href='https://github.com/<%= user.github %>'><%= user.github %></a>
-                        <br>
-                        <strong>Resume:</strong> <a href='/resume:file?file=<%= user.resume %>'><%= user.resume %></a>
-                    </p>
+                    <div class="row">
+                        <div class="col-md-12 card">
+                            <h1 class="text-center">/profile</h1>
+                            <div style="border-top: 3px solid #4BCF7E; padding: 10px;">
+                                <h3 style="margin: 0;">Welcome, user!</h3>
+                                <p><strong>School:</strong> <%= user.mlh_data.school.name %>
+                                    <br>
+                                    <strong>Year:</strong> <%= user.mlh_data.level_of_study %>
+                                    <br>
+                                    <strong>Major:</strong> <%= user.mlh_data.major %>
+                                    <br>
+                                    <strong>Github:</strong> <a href='https://github.com/<%= user.github %>'><%= user.github %></a>
+                                    <br>
+                                    <strong>Resume:</strong> <a href='/resume:file?file=<%= user.resume %>'><%= user.resume %></a>
+                                </p>
+
+                                <img style="width:100%;" src="https://upload.wikimedia.org/wikipedia/commons/4/41/QR_Code_Example.svg">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
 
                 <div class="col-md-6 card-container">
-                    <h1 class="text-center">/announcements</h1>
-                    <p style="border-top: 1px dotted black; margin-bottom: 10px;"><strong>10:07pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, mollitia!</p>
-                    <p style="border-top: 1px dotted black; margin-bottom: 10px;"><strong>09:21pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, perspiciatis!</p>
-                    <p style="border-top: 1px dotted black; margin-bottom: 10px;"><strong>08:11pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, sint?</p>
-                    <p style="border-top: 1px dotted black; margin-bottom: 10px;"><strong>04:40pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, nobis?</p>
-                    <p style="border-top: 1px dotted black; margin-bottom: 10px;"><strong>02:19pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, nihil.</p>
-                    <p style="border-top: 1px dotted black; margin-bottom: 10px;"><strong>01:43pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, vero.</p>
-                    <p style="border-top: 1px dotted black; margin-bottom: 10px;"><strong>11:12am</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, ut!</p>
+                    <div class="row">
+                        <div class="col-md-12 card">
+                            <h1 class="text-center">/announcements</h1>
+                            <div style="border-top: 3px solid #4BCF7E; padding: 10px 0px;">
+                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong>10:07pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, mollitia!</p>
+                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong>09:21pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, perspiciatis!</p>
+                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong>08:11pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, sint?</p>
+                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong>04:40pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, nobis?</p>
+                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong>02:19pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, nihil.</p>
+                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong>01:43pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, vero.</p>
+                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong>11:12am</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, ut!</p>
+                            </div>
+                           </div>
+
+                        <div class="col-md-12 card">
+                            <h1 class="text-center">/other stuff</h1>
+                            <p style="border-top: 3px solid #4BCF7E; padding: 10px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque consequatur, distinctio, dolores eaque earum exercitationem explicabo facere facilis fuga fugiat harum illum impedit inventore nam neque quibusdam ratione voluptate. Animi aperiam consequuntur dolor illo maxime nobis obcaecati odio placeat, quas quis sequi ut. Culpa cupiditate et eum, eveniet fugiat illum magnam mollitia natus non recusandae totam voluptates. Accusamus asperiores blanditiis dicta dolore enim est excepturi ipsam laboriosam laudantium officia quaerat quis, sequi sunt unde vel. Alias aliquam, aliquid atque consectetur cumque distinctio dolorum ea.</p>
+                        </div>
+                    </div>
                 </div>
 
 
                 <div class="col-md-3 card-container">
-                    <h1 class="text-center">/qru</h1>
-                    <img style="width:100%; border:5px solid #4BCF7E;" src="https://upload.wikimedia.org/wikipedia/commons/4/41/QR_Code_Example.svg">
+                    <div class="row">
+
+
+                        <div class="col-md-12 card">
+                            <h1 class="text-center">/other stuff</h1>
+                            <p style="border-top: 3px solid #4BCF7E; padding: 10px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem debitis ex, facere iste officiis perspiciatis ratione sint suscipit! Architecto culpa, dolor ducimus eaque, enim error est eveniet necessitatibus neque nisi non perspiciatis provident quae quas quis sint suscipit ut vel? Assumenda cumque dolorem ea earum esse expedita impedit perferendis qui.</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
