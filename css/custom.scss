@@ -116,8 +116,6 @@ $light-green: #ABFFCC;
 $mid-green: #84E5AA;
 $dark-green: #4BCF7E;
 $browser-height: 100vh;
-$browser-height-half: 50vh;
-$browser-width: 100%;
 
 .col-centered{
 	float: none;
@@ -558,7 +556,7 @@ body {
 
 .subpage-section {
 	background-color: white;
-	min-height: 100vh;
+	min-height: $browser-height;
 	padding-bottom: 7vh;
 	
 
@@ -770,6 +768,23 @@ body {
 	}
 }
 
+#dashboard {
+	
+	.card-container {
+		
+		
+
+		border: 2px solid $dark-green;
+
+		h1 {
+			color: $dark-green;
+		}
+
+
+	}
+
+
+}
 
 #manage-confirmation {
 
