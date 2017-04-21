@@ -782,6 +782,11 @@ body {
 		}
 	}
 
+	.upcoming {
+		max-height: 50vh;
+		overflow-y: scroll;
+	}
+
 	.announcements {
 		.card-text {
 			p {

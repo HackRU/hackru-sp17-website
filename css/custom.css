@@ -492,6 +492,9 @@ body {
   text-overflow: ellipsis; }
 #dashboarddayof .user-info .card-text a {
   color: #4BCF7E; }
+#dashboarddayof .upcoming {
+  max-height: 50vh;
+  overflow-y: scroll; }
 #dashboarddayof .announcements .card-text p {
   border-left: 3px solid black;
   margin: 0px 0px 10px 0px;
