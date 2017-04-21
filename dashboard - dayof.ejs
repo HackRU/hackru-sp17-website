@@ -49,26 +49,50 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 style="color: #4BCF7E; border-bottom: 3px solid; padding: 10px;">Welcome, user!</h1>
+                </div>
+            </div>
+
 
             <div class="row">
                 <div class="col-md-3 card-container">
                     <div class="row">
                         <div class="col-md-12 card">
-                            <h1 class="text-center">/profile</h1>
-                            <div style="border-top: 3px solid #4BCF7E; padding: 10px;">
-                                <h3 style="margin: 0;">Welcome, user!</h3>
-                                <p><strong>School:</strong> <%= user.mlh_data.school.name %>
-                                    <br>
-                                    <strong>Year:</strong> <%= user.mlh_data.level_of_study %>
-                                    <br>
-                                    <strong>Major:</strong> <%= user.mlh_data.major %>
-                                    <br>
-                                    <strong>Github:</strong> <a href='https://github.com/<%= user.github %>'><%= user.github %></a>
-                                    <br>
-                                    <strong>Resume:</strong> <a href='/resume:file?file=<%= user.resume %>'><%= user.resume %></a>
-                                </p>
+                            <div style="padding: 10px;">
+                                <img style="width:100%; margin-bottom: 25px;" src="https://upload.wikimedia.org/wikipedia/commons/4/41/QR_Code_Example.svg">
 
-                                <img style="width:100%;" src="https://upload.wikimedia.org/wikipedia/commons/4/41/QR_Code_Example.svg">
+                                <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                    <i class="fa fa-fw fa-graduation-cap" aria-hidden="true"></i>
+                                    <strong>
+                                        <%= user.mlh_data.school.name %>
+                                    </strong>
+                                </p>
+                                <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                    <i class="fa fa-fw fa-user" aria-hidden="true"></i>
+                                    <strong>
+                                        <%= user.mlh_data.level_of_study %>
+                                    </strong>
+                                </p>
+                                <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                    <i class="fa fa-fw fa-lightbulb-o" aria-hidden="true"></i>
+                                    <strong>
+                                        <%= user.mlh_data.major %>
+                                    </strong>
+                                </p>
+                                <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                    <i class="fa fa-fw fa-github" aria-hidden="true"></i>
+                                    <strong>
+                                        <a href='https://github.com/<%= user.github %>'><%= user.github %></a>
+                                    </strong>
+                                </p>
+                                <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                    <i class="fa fa-fw fa-file-text" aria-hidden="true"></i>
+                                    <strong>
+                                        <a href='/resume:file?file=<%= user.resume %>'><%= user.resume %></a>
+                                    </strong>
+                                </p>
 
                             </div>
 
@@ -84,15 +108,15 @@
                         <div class="col-md-12 card">
                             <h1 class="text-center">/announcements</h1>
                             <div style="border-top: 3px solid #4BCF7E; padding: 10px 0px;">
-                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong>10:07pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, mollitia!</p>
-                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong>09:21pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, perspiciatis!</p>
-                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong>08:11pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, sint?</p>
-                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong>04:40pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, nobis?</p>
-                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong>02:19pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, nihil.</p>
-                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong>01:43pm</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, vero.</p>
-                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong>11:12am</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, ut!</p>
+                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong><span class="a-time">10:07pm.</span></strong> <span class="a-msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, unde?</span></p>
+                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong><span class="a-time">09:21pm.</span></strong> <span class="a-msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, non?</span></p>
+                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong><span class="a-time">08:11pm.</span></strong> <span class="a-msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, porro.</span></p>
+                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong><span class="a-time">04:40pm.</span></strong> <span class="a-msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, quasi.</span></p>
+                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong><span class="a-time">02:19pm.</span></strong> <span class="a-msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, nihil!</span></p>
+                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong><span class="a-time">01:43pm.</span></strong> <span class="a-msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, voluptatem.</span></p>
+                                <p style="border-left: 3px solid black; margin: 10px 0px; padding-left: 5px;"><strong><span class="a-time">11:12am.</span></strong> <span class="a-msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, soluta.</span></p>
                             </div>
-                           </div>
+                        </div>
 
                         <div class="col-md-12 card">
                             <h1 class="text-center">/other stuff</h1>
