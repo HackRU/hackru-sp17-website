@@ -757,11 +757,18 @@ body {
 
 #dashboarddayof {
 
+	.row {
+		div {
+			overflow: hidden;
+		}
+	}
+
 	.greeting {
 		color: #4BCF7E;
 		border-bottom: 7px solid;
 		padding: 10px;
 	}
+
 
 	.user-info {
 		.qr {
