@@ -26,12 +26,12 @@
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/custom.css">
-    <link rel="stylesheet" type="text/css" href="./css/dashboard.css">
 
     <script src="./js/jquery-3.1.1.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/8dec7403ea.js"></script>
     <script src="./js/custom.js"></script>
+    <script src="./js/util.js"></script>
 </head>
 
 <body>
@@ -52,7 +52,7 @@
             <div class="row">
 
                 <div class="col-md-12">
-                    <h1 class="greeting">Welcome, David!</h1>
+                    <h1 class="greeting">Welcome, <%= user.mlh_data.first_name %>!</h1>
                 </div>
             </div>
 
@@ -62,48 +62,47 @@
                     <div class="row">
                         <div class="col-md-12 card user-info">
                             <div>
-                                <img class="qr" src="https://upload.wikimedia.org/wikipedia/commons/4/41/QR_Code_Example.svg">
+                                <img class="qr" src="data:image/png;charset=utf-8;base64,<%= qrimage %>">
 
-                                <h1>David Chen</h1>
+                                <h1><%= user.mlh_data.first_name + " " + user.mlh_data.last_name %> </h1>
 
                                 <div class="card-text">
                                     <h4>
                                         <i class="fa fa-fw fa-graduation-cap" aria-hidden="true"></i>
                                         <strong>
-                                            Rutgers University
-                                            <!--<%= user.mlh_data.school.name %>-->
+                                            <%= user.mlh_data.school.name %>
                                         </strong>
                                     </h4>
                                     <h4>
                                         <i class="fa fa-fw fa-user" aria-hidden="true"></i>
                                         <strong>
-                                            Undergraduate
-                                            <!--<%= user.mlh_data.level_of_study %>-->
+                                            <%= user.mlh_data.level_of_study %>
                                         </strong>
                                     </h4>
                                     <h4>
                                         <i class="fa fa-fw fa-lightbulb-o" aria-hidden="true"></i>
                                         <strong>
-                                            Computer Science
-                                            <!--<%= user.mlh_data.major %>-->
+                                            <%= user.mlh_data.major %>
                                         </strong>
                                     </h4>
                                     <h4>
                                         <i class="fa fa-fw fa-github" aria-hidden="true"></i>
                                         <strong>
+                                            <% if (user.github != null) { %>
                                             <a href='https://github.com/<%= user.github %>'>
-                                                @davidchen
-                                                <!--<%= user.github %>-->
+                                                <%= user.github %>
                                             </a>
+                                            <% } %>
                                         </strong>
                                     </h4>
                                     <h4>
                                         <i class="fa fa-fw fa-file-text" aria-hidden="true"></i>
                                         <strong>
-                                            <a href='/resume:file?file=<%= user.resume %>'>
-                                                My Resume
-                                                <!--<%= user.resume %>-->
+                                            <% if (user.resume != null) { %>
+                                            <a href='/resume/<%= user.resume %>'>
+                                                <%= user.resume %>
                                             </a>
+                                            <% } %>
                                         </strong>
                                     </h4>
 
@@ -118,10 +117,18 @@
 
 
                         <div class="col-md-12 card">
-                            <h1>/gavel/devpost or leave empty</h1>
+                            <h1>/gavel</h1>
 
                             <div class="card-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis deleniti dolor dolore eaque molestias nam nulla quas reprehenderit, vel! Eius fugiat id iusto molestiae porro quam? A, aliquam, <culpa class=""></culpa></p>
+                                <p>Submit cool hacks <a href="https://devpost.com">here</a>!</p>
+                                <form id="gavel-form" action="javascript:handleGavelRequest()">
+                                    <span class="gavel-form-text">Look up your cool hacks </span>
+                                    <input type="text" id="gavel-form-name-input">
+                                    <input type="submit" id="gavel-form-submit-input">
+                                </form>
+                                <div id="gavel-data">
+
+                                </div>
                             </div>
 
                         </div>
@@ -136,88 +143,16 @@
                             <h1>/announcements</h1>
                             <div class="card-text">
 
-                                <!-- backend: limit the number of recent announcements so that it doesn't make the page overextend/look ugly -->
-                                <!-- or if not possible i can try to make it into a scrollable window after certain height surpassed... -->
 
-                                <p>
-                                    <span class="a-time">10:07pm.</span>
-                                    <span class="a-msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at aut cum dicta harum impedit ipsa laborum magni nostrum officia officiis quasi, qui quo totam unde ut velit? Deleniti, voluptates?</span>
-                                </p>
-
-                                <p>
-                                    <span class="a-time">09:21pm.</span>
-                                    <span class="a-msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ex fuga, in incidunt ipsa ipsam labore, laboriosam nemo optio quas qui repellat reprehenderit saepe vel, vitae? Ducimus illo ullam voluptatibus!</span>
-                                </p>
-
-                                <p>
-                                    <span class="a-time">08:11pm.</span>
-                                    <span class="a-msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate deserunt dolorum ipsam laboriosam magnam quidem reiciendis suscipit? Ad autem corporis dolor eligendi enim error odit praesentium, quam saepe tempore.</span>
-                                </p>
-
-                                <p>
-                                    <span class="a-time">10:07pm.</span>
-                                    <span class="a-msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at aut cum dicta harum impedit ipsa laborum magni nostrum officia officiis quasi, qui quo totam unde ut velit? Deleniti, voluptates?</span>
-                                </p>
-
-                                <p>
-                                    <span class="a-time">09:21pm.</span>
-                                    <span class="a-msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ex fuga, in incidunt ipsa ipsam labore, laboriosam nemo optio quas qui repellat reprehenderit saepe vel, vitae? Ducimus illo ullam voluptatibus!</span>
-                                </p>
-
-                                <p>
-                                    <span class="a-time">08:11pm.</span>
-                                    <span class="a-msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate deserunt dolorum ipsam laboriosam magnam quidem reiciendis suscipit? Ad autem corporis dolor eligendi enim error odit praesentium, quam saepe tempore.</span>
-                                </p>
-
-
+                                <section class="card-section" id="anouncements-app"><%- anouncementsMarkup %></section>
                             </div>
                         </div>
 
                         <div class="col-md-12 card">
                             <h1>/upcoming</h1>
                             <div class="card-text upcoming">
-                                
+                                <section class="card-section" id="events-app"><%- eventsMarkup %></section>
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate delectus distinctio eligendi eos id. Maxime necessitatibus nesciunt nisi provident suscipit!</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto at commodi cum deserunt eligendi impedit, laboriosam odit officiis sed?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio dolorum eaque enim exercitationem ipsam non provident recusandae tempore ut.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto cupiditate facere, illo in laudantium maiores natus neque nesciunt quisquam?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda dignissimos eos est, ipsum maxime quisquam quo reprehenderit totam ut?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate delectus distinctio eligendi eos id. Maxime necessitatibus nesciunt nisi provident suscipit!</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto at commodi cum deserunt eligendi impedit, laboriosam odit officiis sed?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio dolorum eaque enim exercitationem ipsam non provident recusandae tempore ut.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto cupiditate facere, illo in laudantium maiores natus neque nesciunt quisquam?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda dignissimos eos est, ipsum maxime quisquam quo reprehenderit totam ut?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate delectus distinctio eligendi eos id. Maxime necessitatibus nesciunt nisi provident suscipit!</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto at commodi cum deserunt eligendi impedit, laboriosam odit officiis sed?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio dolorum eaque enim exercitationem ipsam non provident recusandae tempore ut.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto cupiditate facere, illo in laudantium maiores natus neque nesciunt quisquam?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda dignissimos eos est, ipsum maxime quisquam quo reprehenderit totam ut?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate delectus distinctio eligendi eos id. Maxime necessitatibus nesciunt nisi provident suscipit!</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto at commodi cum deserunt eligendi impedit, laboriosam odit officiis sed?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio dolorum eaque enim exercitationem ipsam non provident recusandae tempore ut.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto cupiditate facere, illo in laudantium maiores natus neque nesciunt quisquam?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda dignissimos eos est, ipsum maxime quisquam quo reprehenderit totam ut?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate delectus distinctio eligendi eos id. Maxime necessitatibus nesciunt nisi provident suscipit!</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto at commodi cum deserunt eligendi impedit, laboriosam odit officiis sed?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio dolorum eaque enim exercitationem ipsam non provident recusandae tempore ut.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto cupiditate facere, illo in laudantium maiores natus neque nesciunt quisquam?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda dignissimos eos est, ipsum maxime quisquam quo reprehenderit totam ut?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate delectus distinctio eligendi eos id. Maxime necessitatibus nesciunt nisi provident suscipit!</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto at commodi cum deserunt eligendi impedit, laboriosam odit officiis sed?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio dolorum eaque enim exercitationem ipsam non provident recusandae tempore ut.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto cupiditate facere, illo in laudantium maiores natus neque nesciunt quisquam?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda dignissimos eos est, ipsum maxime quisquam quo reprehenderit totam ut?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate delectus distinctio eligendi eos id. Maxime necessitatibus nesciunt nisi provident suscipit!</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto at commodi cum deserunt eligendi impedit, laboriosam odit officiis sed?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio dolorum eaque enim exercitationem ipsam non provident recusandae tempore ut.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto cupiditate facere, illo in laudantium maiores natus neque nesciunt quisquam?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda dignissimos eos est, ipsum maxime quisquam quo reprehenderit totam ut?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate delectus distinctio eligendi eos id. Maxime necessitatibus nesciunt nisi provident suscipit!</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto at commodi cum deserunt eligendi impedit, laboriosam odit officiis sed?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio dolorum eaque enim exercitationem ipsam non provident recusandae tempore ut.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto cupiditate facere, illo in laudantium maiores natus neque nesciunt quisquam?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda dignissimos eos est, ipsum maxime quisquam quo reprehenderit totam ut?</p>
                             </div>
                         </div>
 
@@ -231,9 +166,15 @@
                         <div class="col-md-12 card info-bar">
                             <h1>/info</h1>
                             <div class="row">
-                                <div class="col-md-4"><a href=""><img class="info-bar-pic" src="http://logonoid.com/images/google-maps-logo.png" alt=""></a></div>
-                                <div class="col-md-4"><a href=""><img class="info-bar-pic" src="https://cdn.worldvectorlogo.com/logos/slack-1.svg" alt=""></a></div>
-                                <div class="col-md-4"><a href=""><img class="info-bar-pic" src="https://devpost-challengepost.netdna-ssl.com/assets/reimagine2/devpost-icon-900856edde1e4a510a65f29a1bde7a2b.svg" alt=""></a></div>
+                                <div class="col-md-4"><a href=""><img class="info-bar-pic"
+                                                                      src="http://logonoid.com/images/google-maps-logo.png"
+                                                                      alt=""></a></div>
+                                <div class="col-md-4"><a href=""><img class="info-bar-pic"
+                                                                      src="https://cdn.worldvectorlogo.com/logos/slack-1.svg"
+                                                                      alt=""></a></div>
+                                <div class="col-md-4"><a href=""><img class="info-bar-pic"
+                                                                      src="https://devpost-challengepost.netdna-ssl.com/assets/reimagine2/devpost-icon-900856edde1e4a510a65f29a1bde7a2b.svg"
+                                                                      alt=""></a></div>
 
                                 <div class="col-md-12 emergenums">
                                     <h3>Emergency Numbers</h3>
@@ -247,7 +188,9 @@
 
                         <div class="col-md-12 card">
                             <h1>/twitter feed</h1>
-                            <a class="twitter-timeline" data-lang="en" data-height="500" data-theme="light" data-link-color="#4BCF7E" href="https://twitter.com/theHackRU">Tweets by theHackRU</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            <a class="twitter-timeline" data-lang="en" data-height="500" data-theme="light"
+                               data-link-color="#4BCF7E" href="https://twitter.com/theHackRU">Tweets by theHackRU</a>
+                            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </div>
 
 
@@ -256,7 +199,6 @@
 
             </div>
         </div>
-
 
 
     </div>
@@ -269,11 +211,6 @@
 
 </div>
 
-<script id="events-initial-state" type="application/json"></script>
-<script id="tweets-initial-state" type="application/json"><%- tweetsState %></script>
-<script id="anouncementsState-initial-state" type="application/json"><%- anouncementsState %></script>
-<script src="https://cdn.socket.io/socket.io-1.1.0.js"></script>
-<script src="./js/bundles.js"></script>
 </body>
 
 </html>
